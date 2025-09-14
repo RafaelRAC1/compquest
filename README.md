@@ -1,6 +1,6 @@
 # CompQuest 🎮
 
-**QUIZ BATTLE SOBRE COPMUTABILIDADE E COMPLEXIDADE 🤺**
+**QUIZ BATTLE SOBRE COMPUTABILIDADE E COMPLEXIDADE 🤺**
 
 CompQuest é um quiz battle multiplayer que transforma o aprendizado de conceitos de Ciência da Computação em uma experiência descontraída. Combinando elementos de RPG com storytelling, o jogo permite que os jogadores explorem os fundamentos da computabilidade e complexidade de algoritmos de forma gamificada.
 
