@@ -95,8 +95,6 @@ cd compquest
 
 ### 2. Criar e Ativar Ambiente Virtual
 ```bash
-### Configurando o Backend
-```bash
 # Navegar para a pasta do backend
 cd backend
 
@@ -118,9 +116,6 @@ pip install -r requirements.txt
 
 ### 4. Rodar o Serviço FastAPI
 ```bash
-# Navegar para a pasta do backend
-cd backend
-
 # Executar servidor FastAPI
 python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
