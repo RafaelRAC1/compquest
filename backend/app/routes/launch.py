@@ -9,7 +9,7 @@ import asyncio
 
 router = APIRouter(prefix="/compquest")
 
-@router.post("/create-session")
+@router.post("/launch")
 async def create_session(player: Player):
     questions = pick_questions()
     session_id = session_manager.create_session(player.name, questions)
