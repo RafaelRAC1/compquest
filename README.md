@@ -1,10 +1,9 @@
 # CompQuest 🎮
 
-**QUIZ BATTLE SOBRE COPMUTABILIDADE E COMPLEXIDADE 🤺**
+**QUIZ BATTLE SOBRE COMPUTABILIDADE E COMPLEXIDADE 🤺**
 
 CompQuest é um quiz battle multiplayer que transforma o aprendizado de conceitos de Ciência da Computação em uma experiência descontraída. Combinando elementos de RPG com storytelling, o jogo permite que os jogadores explorem os fundamentos da computabilidade e complexidade de algoritmos de forma gamificada.
 
-O projeto apresenta um sistema de ranking, mecânicas especiais como o Oráculo para explicações e a ajuda de Alan Turing, além de um sistema de pontuação baseado em streaks que incentiva o aprendizado contínuo.
 
 ## 🎯 OBJETIVOS
 
@@ -51,6 +50,36 @@ Ensinar conceitos de Ciência da Computação através de uma abordagem lúdica 
 - **Docker** - Containerização para deploy simplificado
 - **Docker Compose** - Orquestração de containers
 
+## 📁 Estrutura Inicial do Projeto
+
+```
+CompQuest/
+├── README.md
+├── .gitignore
+│
+├── backend/
+│   ├── main.py              # Ponto de entrada da API FastAPI
+│   ├── requirements.txt     # Dependências Python
+│   │
+│   └── app/
+│       ├── routes/
+│       │   ├── health.py    # Rota /health (obrigatória)
+│       │   ├── launch.py    # Rota /launch (obrigatória)
+│       │   └── score.py     # Rota /score (obrigatória)
+│       │
+│       ├── models/          # Modelos do banco de dados
+│       ├── services/        # Lógica de negócio
+│       └── data/            # Banco SQLite e perguntas
+│
+└── frontend/
+    ├── index.html
+    └── assets/
+        ├── css/
+        ├── js/
+        └── images/
+
+```
+
 ## 🚀 Como Rodar Localmente
 
 ### Pré-requisitos
@@ -58,13 +87,13 @@ Ensinar conceitos de Ciência da Computação através de uma abordagem lúdica 
 - Git
 - Navegador web moderno
 
-### Clonando o Repositório
+### 1. Clonando o Repositório
 ```bash
 git clone https://github.com/RafaelRAC1/compquest.git
 cd compquest
 ```
 
-### Configurando o Backend
+### 2. Criar e Ativar Ambiente Virtual
 ```bash
 # Navegar para a pasta do backend
 cd backend
@@ -77,18 +106,55 @@ python -m venv venv
 venv\Scripts\activate
 # No Linux/Mac:
 source venv/bin/activate
+```
 
-# Instalar dependências
+### 3. Instalar Dependências
+```bash
+# Instalar dependências do projeto
 pip install -r requirements.txt
+```
 
-# Executar servidor
+### 4. Rodar o Serviço FastAPI
+```bash
+# Executar servidor FastAPI
 python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
 
-# Testar se app está rodando (RETORNA 200 OK)
-# [Colar URL no navegador ou Postman para HTTP GET]
+### 5. Testar Endpoint /health
+
+**Método 1 - Navegador:**
+```
 http://localhost:8000/compquest/health
 ```
 
+**Método 2 - Terminal (curl):**
+```bash
+curl -X GET http://localhost:8000/compquest/health
+```
+
+**Método 3 - Postman:**
+- Método: GET
+- URL: `http://localhost:8000/compquest/health`
+
+### Resposta Esperada
+```json
+{
+  "message": "ok",
+}
+```
+
+**Status Code:** `200 OK`
+
+## 👥 Integrantes do Grupo
+
+- **Rafael Corrêa** - GitHub: [@RafaelRAC1](https://github.com/RafaelRAC1)
+- **Rafael Calixto** - GitHub: [@Rafael Calixto](https://github.com/rafael-calixto1)
+- **Nohan Brendon**
+
+**Curso:** Ciência da Computação - 5º Semestre  
+**Instituição:** Centro Universitário Braz Cubas  
+**Disciplina:** Fundamentos de Computabilidade e Complexidade
+
 ---
 
-**Desenvolvido com para descontrair o ensino de Ciência da Computação 🤪**
+**Desenvolvido com 💜 para descontrair o ensino de Ciência da Computação 🤪**
