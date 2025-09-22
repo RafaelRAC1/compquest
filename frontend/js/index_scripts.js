@@ -29,7 +29,7 @@ async function startSession() {
         updateStatus("Criando sessão...", true);
         console.log("Enviando requisição para criar sessão...");
 
-        const res = await fetch("http://localhost:8000/compquest/create-session", {
+        const res = await fetch("http://localhost:8000/compquest/launch", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name: playerName })
