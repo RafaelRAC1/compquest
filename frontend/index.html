@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/index_style.css">
+    <title>COMPQUEST</title>
+</head>
+
+<body class="window-container">
+    <div class="game-window">
+        <header class="menu-header">
+            <h1>COMPQUEST</h1>
+            <hr class="header-hr">
+            <h2>Quiz Battle Multiplayer</h2>
+        </header>
+
+        <form id="lobby-form">
+            <label for="player-name">APELIDO</label>
+            <input type="text" id="player-name" required>
+            <button type="button" id="start-session">Iniciar Sessão</button>
+            <button type="button" id="find-session">Entrar Sessão</button>
+            <div id="connection-status"></div>
+        </form>
+
+        <div id="game-area" style="display:none;">
+            <h3 id="question-text"></h3>
+            <div id="options"></div>
+            <div id="answer-buttons"></div>
+            <p id="status"></p>
+        </div>
+    </div>
+     <script src="js/index_scripts.js"></script>
+</body>
+</html>
