@@ -155,10 +155,10 @@ function connectWS(sessionId) {
         if (data.event === "round_result") {
             const isWinner = data.winner === playerName;
             const resultMsg = data.correct ?
-                `🎉 ${data.winner} escolheu "${data.answer_letter}) ${data.answer}" e acertou!\n\nResposta correta: ${data.correct_answer}\n\nExplicação: ${data.explanation}` :
-                `😔 ${data.winner} escolheu "${data.answer_letter}) ${data.answer}" e errou.\n\nResposta correta: ${data.correct_answer}\n\nExplicação: ${data.explanation}`;
+                `🎉 ${data.winner} escolheu "${data.answer_letter}) ${data.answer}" e acertou!\n\nResposta Correta: ${data.correct_answer}\n\nExplicação: ${data.explanation}` :
+                `😔 ${data.winner} escolheu "${data.answer_letter}) ${data.answer}" e errou.\n\nResposta Correta: ${data.correct_answer}\n\nExplicação: ${data.explanation}`;
 
-            let scoreText = "\n\nPlacar atual:\n" + Object.entries(data.scores)
+            let scoreText = "\n\nPlacar Atual:\n" + Object.entries(data.scores)
                 .map(([p, s]) => `${p}: ${s} pontos`)
                 .join("\n");
 
@@ -186,7 +186,7 @@ function connectWS(sessionId) {
                 .map(([p, s]) => `${p}: ${s} pontos`)
                 .join("\n");
 
-            alert(`Fim do jogo!\nPlacar final:\n${scoreText}\n\nResultado: ${winner}`);
+            alert(`Fim de Jogo!\nPlacar Final:\n${scoreText}\n\nResultado: ${winner}`);
 
             gameArea.style.display = "none";
             lobbyForm.style.display = "flex";

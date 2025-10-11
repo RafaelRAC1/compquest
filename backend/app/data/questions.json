@@ -1,0 +1,716 @@
+{
+    "easy_questions": [
+        {
+            "question": "O que é uma Máquina de Turing?",
+            "options": [
+                "Um tipo de computador físico antigo",
+                "Um modelo teórico de computação",
+                "Um algoritmo para ordenação de listas",
+                "Um programa usado em jogos"
+            ],
+            "answer": "Um modelo teórico de computação",
+            "oracle_hint": "Pense em uma fita infinita de papel e uma cabeça que lê e escreve símbolos nela, simulando qualquer cálculo.",
+            "explanation": "A Máquina de Turing é um modelo matemático criado por Alan Turing para representar o funcionamento de qualquer computador."
+        },
+        {
+            "question": "Quem criou o conceito de Máquina de Turing?",
+            "options": [
+                "Alan Turing",
+                "John von Neumann",
+                "Alonzo Church",
+                "Donald Knuth"
+            ],
+            "answer": "Alan Turing",
+            "oracle_hint": "Foi um matemático britânico considerado um dos pais da ciência da computação.",
+            "explanation": "Alan Turing desenvolveu a ideia da Máquina de Turing em 1936, estabelecendo as bases da computação teórica."
+        },
+        {
+            "question": "O que significa a classe de problemas P?",
+            "options": [
+                "Problemas resolvidos em tempo polinomial",
+                "Problemas impossíveis de resolver",
+                "Problemas resolvidos por humanos",
+                "Problemas que não têm solução"
+            ],
+            "answer": "Problemas resolvidos em tempo polinomial",
+            "oracle_hint": "São problemas que conseguimos resolver de forma eficiente sem precisar testar todas as possibilidades.",
+            "explanation": "A classe P contém os problemas que podem ser resolvidos em tempo polinomial, ou seja, considerados eficientes."
+        },
+        {
+            "question": "O que significa NP?",
+            "options": [
+                "Não polinomial",
+                "Números primos",
+                "Problemas verificáveis em tempo polinomial",
+                "Problemas que não possuem resposta"
+            ],
+            "answer": "Problemas verificáveis em tempo polinomial",
+            "oracle_hint": "Aqui não importa tanto resolver rápido, mas sim verificar rápido se a solução que alguém deu está correta.",
+            "explanation": "NP significa 'Nondeterministic Polynomial'. São problemas cuja solução pode ser verificada rapidamente por um algoritmo polinomial."
+        },
+        {
+            "question": "Qual dos seguintes é exemplo de problema NP-completo?",
+            "options": [
+                "Multiplicação de números",
+                "Problema do Caixeiro Viajante",
+                "Soma de inteiros",
+                "Ordenação de listas"
+            ],
+            "answer": "Problema do Caixeiro Viajante",
+            "oracle_hint": "É o clássico problema de visitar várias cidades e encontrar o caminho mais curto.",
+            "explanation": "O Problema do Caixeiro Viajante é um exemplo famoso de problema NP-completo: difícil de resolver, mas fácil de verificar."
+        },
+        {
+            "question": "Qual é a função principal da fita em uma Máquina de Turing?",
+            "options": [
+                "Armazenar dados e instruções",
+                "Conectar computadores",
+                "Executar cálculos matemáticos",
+                "Gerar números aleatórios"
+            ],
+            "answer": "Armazenar dados e instruções",
+            "oracle_hint": "Imagine um caderno infinito onde a máquina pode escrever e apagar símbolos.",
+            "explanation": "A fita serve como memória da Máquina de Turing, armazenando símbolos e instruções para a execução dos cálculos."
+        },
+        {
+            "question": "O que significa dizer que um problema é 'decidível'?",
+            "options": [
+                "Ele pode ser resolvido por uma Máquina de Turing",
+                "Ele não tem solução",
+                "Ele depende do acaso",
+                "Ele só pode ser resolvido por humanos"
+            ],
+            "answer": "Ele pode ser resolvido por uma Máquina de Turing",
+            "oracle_hint": "Significa que sempre existe um algoritmo que termina e dá a resposta.",
+            "explanation": "Problema decidível é aquele para o qual existe um algoritmo que sempre termina e fornece a resposta correta."
+        },
+        {
+            "question": "O que caracteriza um problema em P?",
+            "options": [
+                "Pode ser resolvido rapidamente por computador",
+                "Só pode ser resolvido manualmente",
+                "Não pode ser resolvido",
+                "Requer infinito tempo"
+            ],
+            "answer": "Pode ser resolvido rapidamente por computador",
+            "oracle_hint": "São os problemas considerados 'tratáveis' pela teoria da computação.",
+            "explanation": "Problemas em P são aqueles que podem ser resolvidos em tempo polinomial, ou seja, rapidamente em termos teóricos."
+        },
+        {
+            "question": "Se um problema está em P, ele também está em NP?",
+            "options": [
+                "Sim",
+                "Não",
+                "Apenas se for NP-difícil",
+                "Depende do algoritmo"
+            ],
+            "answer": "Sim",
+            "oracle_hint": "Se é rápido de resolver, também é rápido de conferir a solução.",
+            "explanation": "Todo problema em P também está em NP, pois se podemos resolvê-lo rápido, também conseguimos verificar rápido a resposta."
+        },
+        {
+            "question": "Qual dos seguintes NÃO pertence à teoria da complexidade?",
+            "options": [
+                "Classes P e NP",
+                "Problemas NP-completos",
+                "Estruturas de dados básicas",
+                "Máquinas de Turing"
+            ],
+            "answer": "Estruturas de dados básicas",
+            "oracle_hint": "É um conceito da programação prática, não da complexidade teórica.",
+            "explanation": "Estruturas de dados pertencem à programação prática. A teoria da complexidade foca em classes de problemas e algoritmos."
+        },
+        {
+            "question": "Quem é considerado um dos pais da ciência da computação?",
+            "options": [
+                "Isaac Newton",
+                "Alan Turing",
+                "Albert Einstein",
+                "Bill Gates"
+            ],
+            "answer": "Alan Turing",
+            "oracle_hint": "Ele foi matemático britânico e ajudou a decifrar códigos na Segunda Guerra.",
+            "explanation": "Alan Turing é considerado um dos pais da ciência da computação por suas contribuições teóricas e práticas."
+        },
+        {
+            "question": "O que significa 'complexidade de tempo'?",
+            "options": [
+                "Quantidade de memória usada",
+                "Quantidade de passos que um algoritmo leva para executar",
+                "O espaço em disco ocupado",
+                "O número de programadores necessários"
+            ],
+            "answer": "Quantidade de passos que um algoritmo leva para executar",
+            "oracle_hint": "É como medir quanto tempo um algoritmo precisa para rodar, em termos de passos computacionais.",
+            "explanation": "Complexidade de tempo mede o número de passos necessários para que um algoritmo resolva um problema."
+        },
+        {
+            "question": "Qual é um exemplo de problema em P?",
+            "options": [
+                "Ordenação de uma lista",
+                "Problema do Caixeiro Viajante",
+                "Problema da Satisfatibilidade Booleana (SAT)",
+                "Problema do Clique Máximo"
+            ],
+            "answer": "Ordenação de uma lista",
+            "oracle_hint": "É algo que fazemos rotineiramente em computação de forma eficiente.",
+            "explanation": "Ordenar listas pode ser feito em tempo polinomial, sendo um exemplo clássico de problema em P."
+        },
+        {
+            "question": "O que é verificação polinomial em NP?",
+            "options": [
+                "Checar rapidamente se uma solução proposta é válida",
+                "Resolver o problema em tempo constante",
+                "Testar infinitas possibilidades",
+                "Usar apenas números primos"
+            ],
+            "answer": "Checar rapidamente se uma solução proposta é válida",
+            "oracle_hint": "Não significa resolver rápido, mas sim conferir rápido se alguém já deu uma resposta.",
+            "explanation": "Em NP, as soluções podem ser verificadas em tempo polinomial, mesmo que encontrar a solução seja difícil."
+        },
+        {
+            "question": "Qual a relação entre P e NP que ainda não foi provada?",
+            "options": [
+                "Se P = NP",
+                "Se NP = NP-completo",
+                "Se todo problema é indecidível",
+                "Se existe Máquina de Turing real"
+            ],
+            "answer": "Se P = NP",
+            "oracle_hint": "É o maior problema aberto da ciência da computação.",
+            "explanation": "Ainda não sabemos se todos os problemas que podem ser verificados rapidamente (NP) também podem ser resolvidos rapidamente (P)."
+        },
+        {
+            "question": "O que significa 'NP-completo'?",
+            "options": [
+                "Problemas mais fáceis que P",
+                "Problemas mais difíceis dentro de NP",
+                "Problemas indecidíveis",
+                "Problemas resolvidos em tempo constante"
+            ],
+            "answer": "Problemas mais difíceis dentro de NP",
+            "oracle_hint": "São os problemas em NP que representam os casos mais difíceis. Se resolvermos um deles rápido, resolvemos todos.",
+            "explanation": "NP-completos são problemas em NP considerados os mais difíceis, pois qualquer problema em NP pode ser reduzido a eles."
+        },
+        {
+            "question": "A Máquina de Turing é usada para:",
+            "options": [
+                "Modelar processos de computação",
+                "Construir redes de computadores",
+                "Programar diretamente em hardware",
+                "Resolver apenas equações matemáticas"
+            ],
+            "answer": "Modelar processos de computação",
+            "oracle_hint": "Ela é uma abstração que mostra até onde um computador pode chegar.",
+            "explanation": "A Máquina de Turing é usada como modelo teórico para entender os limites da computação."
+        },
+        {
+            "question": "Qual é um exemplo de problema indecidível?",
+            "options": [
+                "Problema da Parada",
+                "Soma de dois inteiros",
+                "Ordenação por bolha",
+                "Busca binária"
+            ],
+            "answer": "Problema da Parada",
+            "oracle_hint": "É o problema de prever se um programa vai terminar ou rodar para sempre.",
+            "explanation": "O Problema da Parada é um exemplo clássico de problema indecidível: não há algoritmo geral que resolva todos os casos."
+        },
+        {
+            "question": "Qual classe contém problemas que podem ser resolvidos e verificados em tempo polinomial?",
+            "options": [
+                "P",
+                "NP",
+                "NP-completo",
+                "Indecidível"
+            ],
+            "answer": "P",
+            "oracle_hint": "Se consigo resolver rápido, também consigo verificar rápido.",
+            "explanation": "A classe P contém problemas que podem ser tanto resolvidos quanto verificados em tempo polinomial."
+        },
+        {
+            "question": "Qual é a unidade teórica de processamento em uma Máquina de Turing?",
+            "options": [
+                "Cabeçote de leitura e escrita",
+                "Memória RAM",
+                "Processador",
+                "Teclado"
+            ],
+            "answer": "Cabeçote de leitura e escrita",
+            "oracle_hint": "É como uma caneta que lê e escreve na fita.",
+            "explanation": "O cabeçote de leitura/escrita movimenta-se na fita da Máquina de Turing para ler e modificar símbolos."
+        }
+    ],
+    "medium_questions": [
+        {
+            "question": "Qual é a principal diferença entre problemas em P e problemas em NP?",
+            "options": [
+                "Em P resolvemos rápido, em NP verificamos rápido",
+                "Em NP não existem soluções",
+                "Em P os problemas são indecidíveis",
+                "Em NP só existem algoritmos determinísticos"
+            ],
+            "answer": "Em P resolvemos rápido, em NP verificamos rápido",
+            "oracle_hint": "Pensa em resolver uma equação versus apenas checar se uma solução já proposta é correta.",
+            "explanation": "Problemas em P podem ser resolvidos em tempo polinomial, enquanto em NP só conseguimos verificar rapidamente se uma solução já existe."
+        },
+        {
+            "question": "O Problema da Satisfatibilidade Booleana (SAT) pertence a qual classe?",
+            "options": [
+                "P",
+                "NP-completo",
+                "Indecidível",
+                "NP-difícil"
+            ],
+            "answer": "NP-completo",
+            "oracle_hint": "Esse problema foi o primeiro a ser provado NP-completo, servindo de base para outros.",
+            "explanation": "O problema SAT foi o primeiro problema provado NP-completo por Stephen Cook em 1971."
+        },
+        {
+            "question": "Se conseguirmos provar que um problema NP-completo está em P, o que isso implica?",
+            "options": [
+                "Todos os problemas em NP também estariam em P",
+                "Apenas esse problema estaria em P",
+                "Nada mudaria",
+                "Todos os problemas indecidíveis se tornariam decidíveis"
+            ],
+            "answer": "Todos os problemas em NP também estariam em P",
+            "oracle_hint": "Resolver um NP-completo rápido significa resolver todos os problemas de NP rápido.",
+            "explanation": "Se um problema NP-completo estiver em P, isso significa que P = NP."
+        },
+        {
+            "question": "Qual dos seguintes é exemplo de problema NP-difícil?",
+            "options": [
+                "Problema do Caixeiro Viajante na versão de decisão",
+                "Problema do Caixeiro Viajante na versão de otimização",
+                "Ordenação de listas",
+                "Multiplicação de inteiros"
+            ],
+            "answer": "Problema do Caixeiro Viajante na versão de otimização",
+            "oracle_hint": "A versão que pede o menor caminho exato é ainda mais complicada do que só decidir se existe um caminho.",
+            "explanation": "A versão de otimização do TSP é NP-difícil, enquanto a versão de decisão é NP-completa."
+        },
+        {
+            "question": "O que significa 'redução polinomial'?",
+            "options": [
+                "Transformar um problema em outro de forma eficiente",
+                "Reduzir o número de passos de um algoritmo",
+                "Usar menos memória",
+                "Eliminar soluções incorretas"
+            ],
+            "answer": "Transformar um problema em outro de forma eficiente",
+            "oracle_hint": "É como traduzir um problema difícil em outro sem perder a essência da dificuldade.",
+            "explanation": "Redução polinomial é um método para transformar um problema em outro, mantendo a complexidade dentro de tempo polinomial."
+        },
+        {
+            "question": "Por que o problema da parada é importante?",
+            "options": [
+                "Ele prova que existem limites para a computação",
+                "Ele resolve NP-completos",
+                "Ele pertence à classe P",
+                "Ele pode ser resolvido por simulação"
+            ],
+            "answer": "Ele prova que existem limites para a computação",
+            "oracle_hint": "Mostra que há perguntas que nenhuma máquina consegue responder sempre.",
+            "explanation": "O Problema da Parada mostra que existem problemas indecidíveis, provando que nem tudo pode ser computado."
+        },
+        {
+            "question": "Qual a complexidade de tempo do algoritmo de busca binária?",
+            "options": [
+                "O(1)",
+                "O(n)",
+                "O(log n)",
+                "O(n log n)"
+            ],
+            "answer": "O(log n)",
+            "oracle_hint": "A cada passo, o algoritmo corta o espaço de busca pela metade.",
+            "explanation": "Busca binária divide o problema em duas partes a cada passo, resultando em O(log n)."
+        },
+        {
+            "question": "Qual é a diferença entre NP e NP-completo?",
+            "options": [
+                "NP é mais restrito que NP-completo",
+                "NP-completo são os problemas mais difíceis dentro de NP",
+                "Todo NP é também NP-completo",
+                "NP-completo são problemas indecidíveis"
+            ],
+            "answer": "NP-completo são os problemas mais difíceis dentro de NP",
+            "oracle_hint": "Pensa em NP como uma biblioteca e NP-completo como as estantes com os livros mais pesados.",
+            "explanation": "NP-completo é o subconjunto de NP com os problemas mais difíceis, para os quais se acredita não haver solução polinomial."
+        },
+        {
+            "question": "Quem provou que o SAT é NP-completo?",
+            "options": [
+                "Alan Turing",
+                "Stephen Cook",
+                "Donald Knuth",
+                "John von Neumann"
+            ],
+            "answer": "Stephen Cook",
+            "oracle_hint": "Foi em 1971, no teorema que leva o nome dele.",
+            "explanation": "Stephen Cook provou em 1971 que o problema SAT é NP-completo, no famoso Teorema de Cook."
+        },
+        {
+            "question": "Qual é a diferença entre problemas indecidíveis e intratáveis?",
+            "options": [
+                "Indecidíveis não têm solução geral, intratáveis têm mas são impraticáveis",
+                "Indecidíveis são fáceis, intratáveis são impossíveis",
+                "Indecidíveis pertencem a P",
+                "Intratáveis não existem"
+            ],
+            "answer": "Indecidíveis não têm solução geral, intratáveis têm mas são impraticáveis",
+            "oracle_hint": "Um não tem resposta possível, o outro tem mas demora demais para ser encontrada.",
+            "explanation": "Indecidíveis não podem ser resolvidos por nenhum algoritmo geral; intratáveis podem, mas exigem tempo impraticável."
+        },
+        {
+            "question": "Qual é a complexidade do algoritmo mergesort?",
+            "options": [
+                "O(n)",
+                "O(log n)",
+                "O(n log n)",
+                "O(n²)"
+            ],
+            "answer": "O(n log n)",
+            "oracle_hint": "Esse algoritmo divide para conquistar, juntando as partes ordenadas no final.",
+            "explanation": "Mergesort tem complexidade O(n log n), sendo um dos algoritmos de ordenação mais eficientes no pior caso."
+        },
+        {
+            "question": "Qual a relação entre o problema da clique e NP?",
+            "options": [
+                "É NP-completo",
+                "É indecidível",
+                "Está em P",
+                "Não pertence a nenhuma classe"
+            ],
+            "answer": "É NP-completo",
+            "oracle_hint": "É um dos clássicos problemas de grafos difíceis, usado para reduzir outros problemas.",
+            "explanation": "O problema do clique é NP-completo, ou seja, é difícil de resolver mas fácil de verificar."
+        },
+        {
+            "question": "Qual é a complexidade do algoritmo de força bruta para o Caixeiro Viajante?",
+            "options": [
+                "O(n)",
+                "O(n²)",
+                "O(n!)",
+                "O(2^n)"
+            ],
+            "answer": "O(n!)",
+            "oracle_hint": "Esse método testa todas as possíveis ordens de cidades.",
+            "explanation": "Resolver o TSP por força bruta exige testar todas as permutações de cidades, resultando em O(n!)."
+        },
+        {
+            "question": "O que significa dizer que um algoritmo é 'determinístico'?",
+            "options": [
+                "Sempre produz o mesmo resultado para a mesma entrada",
+                "Gera soluções aleatórias",
+                "Não tem saída definida",
+                "Depende de oráculos externos"
+            ],
+            "answer": "Sempre produz o mesmo resultado para a mesma entrada",
+            "oracle_hint": "É previsível: entrada igual, saída igual.",
+            "explanation": "Um algoritmo determinístico segue sempre os mesmos passos e gera sempre a mesma saída para a mesma entrada."
+        },
+        {
+            "question": "Qual é a importância da Máquina de Turing Universal?",
+            "options": [
+                "Ela prova que existe um computador capaz de simular qualquer outro",
+                "Ela resolve problemas indecidíveis",
+                "Ela pertence à classe NP",
+                "Ela foi usada na Segunda Guerra"
+            ],
+            "answer": "Ela prova que existe um computador capaz de simular qualquer outro",
+            "oracle_hint": "É como o 'protótipo' de todos os computadores modernos.",
+            "explanation": "A Máquina de Turing Universal é um modelo que mostra que uma máquina pode simular qualquer outra máquina de Turing."
+        },
+        {
+            "question": "Qual é a complexidade do algoritmo de ordenação quicksort no pior caso?",
+            "options": [
+                "O(n)",
+                "O(n log n)",
+                "O(n²)",
+                "O(2^n)"
+            ],
+            "answer": "O(n²)",
+            "oracle_hint": "Quando o pivô é sempre o pior possível, ele acaba se aproximando da força bruta.",
+            "explanation": "O quicksort tem complexidade média O(n log n), mas no pior caso degrada para O(n²)."
+        },
+        {
+            "question": "Qual é o foco principal da teoria da complexidade?",
+            "options": [
+                "Classificar problemas de acordo com a dificuldade",
+                "Construir computadores mais rápidos",
+                "Criar novos sistemas operacionais",
+                "Desenvolver linguagens de programação"
+            ],
+            "answer": "Classificar problemas de acordo com a dificuldade",
+            "oracle_hint": "É como organizar problemas em caixinhas: fáceis, difíceis ou impossíveis.",
+            "explanation": "A teoria da complexidade classifica problemas computacionais em termos de recursos necessários (tempo, memória)."
+        },
+        {
+            "question": "Qual é a diferença entre tempo polinomial e tempo exponencial?",
+            "options": [
+                "Polinomial cresce mais devagar que exponencial",
+                "Exponencial cresce mais devagar que polinomial",
+                "São iguais",
+                "Exponencial é mais eficiente"
+            ],
+            "answer": "Polinomial cresce mais devagar que exponencial",
+            "oracle_hint": "Um cresce como n², o outro como 2^n.",
+            "explanation": "Tempo polinomial é considerado eficiente porque cresce devagar, enquanto exponencial cresce muito rápido e se torna impraticável."
+        },
+        {
+            "question": "O que caracteriza os problemas NP-difíceis?",
+            "options": [
+                "São tão difíceis quanto os NP-completos ou mais",
+                "São sempre indecidíveis",
+                "São sempre em P",
+                "São problemas resolvidos em tempo constante"
+            ],
+            "answer": "São tão difíceis quanto os NP-completos ou mais",
+            "oracle_hint": "Estão no mesmo patamar ou acima dos NP-completos em termos de dificuldade.",
+            "explanation": "NP-difíceis são pelo menos tão difíceis quanto os NP-completos, podendo até ser indecidíveis."
+        },
+        {
+            "question": "Por que o problema P vs NP é importante?",
+            "options": [
+                "Porque afeta diversas áreas como criptografia, otimização e IA",
+                "Porque prova que computadores podem pensar",
+                "Porque resolve problemas indecidíveis",
+                "Porque mostra que todo algoritmo é rápido"
+            ],
+            "answer": "Porque afeta diversas áreas como criptografia, otimização e IA",
+            "oracle_hint": "A segurança digital e muitos algoritmos dependem da dificuldade de certos problemas.",
+            "explanation": "Saber se P = NP tem impacto em segurança, criptografia, inteligência artificial e otimização."
+        }
+    ],
+    "hard_questions": [
+        {
+            "question": "O Teorema de Cook-Levin é importante porque:",
+            "options": [
+                "Mostra que SAT é NP-completo",
+                "Resolve o problema P vs NP",
+                "Prova que todo problema é indecidível",
+                "Mostra que P = NP"
+            ],
+            "answer": "Mostra que SAT é NP-completo",
+            "oracle_hint": "Esse teorema foi o marco inicial para formalizar os problemas NP-completos.",
+            "explanation": "O Teorema de Cook-Levin provou que SAT é NP-completo, fundando a teoria da NP-completude."
+        },
+        {
+            "question": "O que significa dizer que um problema A é redutível polinomialmente a um problema B?",
+            "options": [
+                "Se resolvermos B rápido, também conseguimos resolver A rápido",
+                "B é sempre mais difícil que A",
+                "A é sempre indecidível",
+                "A é NP-completo"
+            ],
+            "answer": "Se resolvermos B rápido, também conseguimos resolver A rápido",
+            "oracle_hint": "É como usar uma tradução eficiente: se sei resolver o problema B, automaticamente sei resolver o A.",
+            "explanation": "Se A pode ser reduzido a B em tempo polinomial, e B pode ser resolvido rápido, então A também pode ser resolvido rápido."
+        },
+        {
+            "question": "Qual é a diferença entre NP-difícil e NP-completo?",
+            "options": [
+                "NP-completo está dentro de NP, NP-difícil pode estar fora",
+                "NP-difícil é mais fácil que NP-completo",
+                "Ambos significam a mesma coisa",
+                "NP-completo são problemas indecidíveis"
+            ],
+            "answer": "NP-completo está dentro de NP, NP-difícil pode estar fora",
+            "oracle_hint": "Um exige que a solução possa ser verificada rápido, o outro nem isso.",
+            "explanation": "Problemas NP-completos pertencem a NP e são os mais difíceis dentro dela; problemas NP-difíceis podem até nem estar em NP."
+        },
+        {
+            "question": "O problema do Isomorfismo de Grafos pertence a qual classe atualmente conhecida?",
+            "options": [
+                "P",
+                "NP-completo",
+                "NP, mas não se sabe se é P ou NP-completo",
+                "Indecidível"
+            ],
+            "answer": "NP, mas não se sabe se é P ou NP-completo",
+            "oracle_hint": "Ele é um dos problemas que ainda está no limbo da complexidade, sem classificação definitiva.",
+            "explanation": "O problema do Isomorfismo de Grafos está em NP, mas não se sabe se é NP-completo ou se pode ser resolvido em P."
+        },
+        {
+            "question": "Qual é a principal consequência de provar que P ≠ NP?",
+            "options": [
+                "Existem problemas que só podem ser verificados rapidamente, mas não resolvidos",
+                "Todos os problemas NP-completos estariam em P",
+                "Todo problema indecidível seria resolvido",
+                "Criptografia se tornaria impossível"
+            ],
+            "answer": "Existem problemas que só podem ser verificados rapidamente, mas não resolvidos",
+            "oracle_hint": "Isso confirmaria a intuição de que resolver é mais difícil do que apenas verificar.",
+            "explanation": "Se P ≠ NP, isso significa que existem problemas verificáveis em tempo polinomial que não podem ser resolvidos em tempo polinomial."
+        },
+        {
+            "question": "O Problema da Parada pode ser reduzido a qual outro tipo de problema?",
+            "options": [
+                "Problemas indecidíveis em geral",
+                "Problemas em P",
+                "Problemas NP-completos",
+                "Problemas em NP"
+            ],
+            "answer": "Problemas indecidíveis em geral",
+            "oracle_hint": "Ele é a base para mostrar que muitos outros problemas também não podem ser resolvidos.",
+            "explanation": "O Problema da Parada é indecidível e pode ser reduzido a outros problemas indecidíveis, mostrando a generalidade do limite computacional."
+        },
+        {
+            "question": "Por que o Problema do Clique Máximo é considerado difícil?",
+            "options": [
+                "Porque é NP-completo",
+                "Porque não tem solução",
+                "Porque é indecidível",
+                "Porque pertence a P"
+            ],
+            "answer": "Porque é NP-completo",
+            "oracle_hint": "Ele é um clássico exemplo em grafos, usado como base para reduções de outros problemas.",
+            "explanation": "O Clique Máximo é NP-completo, ou seja, encontrar a solução é considerado computacionalmente difícil."
+        },
+        {
+            "question": "Qual é a relação entre o Problema da Corretude de Programas e indecidibilidade?",
+            "options": [
+                "É indecidível porque se reduz ao Problema da Parada",
+                "Está em P",
+                "É NP-completo",
+                "É NP-difícil mas verificável"
+            ],
+            "answer": "É indecidível porque se reduz ao Problema da Parada",
+            "oracle_hint": "Validar se um programa sempre funciona corretamente é tão difícil quanto prever se ele para.",
+            "explanation": "O Problema da Corretude é indecidível, pois pode ser reduzido ao Problema da Parada."
+        },
+        {
+            "question": "O que significa dizer que a classe P é 'fechada sob complemento'?",
+            "options": [
+                "Se um problema está em P, seu complemento também está em P",
+                "P é igual a NP",
+                "P contém NP-completos",
+                "P é indecidível"
+            ],
+            "answer": "Se um problema está em P, seu complemento também está em P",
+            "oracle_hint": "É como dizer que resolver 'sim' rápido implica resolver 'não' rápido também.",
+            "explanation": "A classe P é fechada sob complemento, ou seja, se um problema pode ser resolvido em tempo polinomial, seu complemento também pode."
+        },
+        {
+            "question": "Qual a importância do Teorema de Rice?",
+            "options": [
+                "Mostra que toda propriedade não trivial de linguagens de programação é indecidível",
+                "Resolve P vs NP",
+                "Prova que SAT é NP-completo",
+                "Demonstra que P = NP"
+            ],
+            "answer": "Mostra que toda propriedade não trivial de linguagens de programação é indecidível",
+            "oracle_hint": "Esse teorema generaliza o Problema da Parada para qualquer propriedade semântica de programas.",
+            "explanation": "O Teorema de Rice prova que qualquer propriedade não trivial sobre funções computáveis é indecidível."
+        },
+        {
+            "question": "Qual é a relação entre tempo exponencial e problemas NP-completos?",
+            "options": [
+                "Até hoje, todos algoritmos conhecidos para NP-completos têm pior caso exponencial",
+                "NP-completos sempre estão em P",
+                "NP-completos sempre podem ser resolvidos em tempo linear",
+                "Não existe relação"
+            ],
+            "answer": "Até hoje, todos algoritmos conhecidos para NP-completos têm pior caso exponencial",
+            "oracle_hint": "Nenhum algoritmo polinomial foi encontrado até hoje para esse conjunto de problemas.",
+            "explanation": "Problemas NP-completos, até onde se sabe, só têm soluções conhecidas com algoritmos de tempo exponencial."
+        },
+        {
+            "question": "Qual é a relevância do Problema da Satisfatibilidade Booleana (SAT)?",
+            "options": [
+                "Foi o primeiro problema provado NP-completo",
+                "É indecidível",
+                "Resolve o Problema da Parada",
+                "Está em P"
+            ],
+            "answer": "Foi o primeiro problema provado NP-completo",
+            "oracle_hint": "Ele serviu de ponto de partida para todos os outros problemas NP-completos.",
+            "explanation": "O problema SAT foi o primeiro a ser provado NP-completo, estabelecendo a base para reduções."
+        },
+        {
+            "question": "Qual a importância do lema de Savitch?",
+            "options": [
+                "Mostra que NPSPACE = PSPACE",
+                "Prova que P = NP",
+                "Demonstra que SAT é indecidível",
+                "Resolve o Problema da Parada"
+            ],
+            "answer": "Mostra que NPSPACE = PSPACE",
+            "oracle_hint": "Esse resultado mostra que espaço não distingue tanto quanto tempo na complexidade.",
+            "explanation": "O lema de Savitch mostra que NPSPACE = PSPACE, ou seja, espaço polinomial não diferencia entre determinístico e não determinístico."
+        },
+        {
+            "question": "O que caracteriza a classe PSPACE?",
+            "options": [
+                "Problemas resolvidos com memória polinomial",
+                "Problemas indecidíveis",
+                "Problemas sempre em tempo constante",
+                "Problemas resolvidos apenas por máquinas probabilísticas"
+            ],
+            "answer": "Problemas resolvidos com memória polinomial",
+            "oracle_hint": "Aqui o foco não é no tempo, mas na quantidade de memória usada.",
+            "explanation": "PSPACE contém problemas resolvidos usando espaço polinomial, independentemente do tempo."
+        },
+        {
+            "question": "Qual é a relação entre P, NP e PSPACE?",
+            "options": [
+                "P ⊆ NP ⊆ PSPACE",
+                "P = PSPACE sempre",
+                "NP = PSPACE sempre",
+                "Não há relação conhecida"
+            ],
+            "answer": "P ⊆ NP ⊆ PSPACE",
+            "oracle_hint": "As classes estão contidas em cascata, como caixas dentro de caixas.",
+            "explanation": "Sabe-se que P está contido em NP e NP está contido em PSPACE."
+        },
+        {
+            "question": "Qual é a definição de co-NP?",
+            "options": [
+                "Problemas cujos complementos estão em NP",
+                "Problemas indecidíveis",
+                "Problemas resolvidos em tempo constante",
+                "Problemas sempre em P"
+            ],
+            "answer": "Problemas cujos complementos estão em NP",
+            "oracle_hint": "É como inverter a pergunta: se a resposta é não, ainda podemos verificar rápido.",
+            "explanation": "Co-NP é o conjunto de problemas cujo complemento pertence a NP."
+        },
+        {
+            "question": "Qual a importância do problema P vs NP para criptografia?",
+            "options": [
+                "A segurança de muitos sistemas depende da dificuldade de resolver problemas NP",
+                "Mostra que todo algoritmo é seguro",
+                "Prova que todos os problemas indecidíveis são resolvíveis",
+                "Impede a criação de chaves públicas"
+            ],
+            "answer": "A segurança de muitos sistemas depende da dificuldade de resolver problemas NP",
+            "oracle_hint": "Se P = NP, sistemas de criptografia atuais seriam quebrados rapidamente.",
+            "explanation": "Criptografia moderna se baseia em problemas considerados difíceis (não resolvíveis em tempo polinomial)."
+        },
+        {
+            "question": "Qual é o impacto de provar que P = NP?",
+            "options": [
+                "Problemas de otimização seriam resolvidos rapidamente",
+                "Todos os problemas indecidíveis seriam resolvidos",
+                "NP deixaria de existir",
+                "PSPACE desapareceria"
+            ],
+            "answer": "Problemas de otimização seriam resolvidos rapidamente",
+            "oracle_hint": "Problemas hoje considerados impossíveis na prática poderiam ser resolvidos com eficiência.",
+            "explanation": "Se P = NP, problemas de otimização, verificação e muitos outros poderiam ser resolvidos em tempo polinomial."
+        },
+        {
+            "question": "Qual é a relação entre NP e verificação não determinística?",
+            "options": [
+                "NP permite verificar soluções em tempo polinomial usando uma máquina não determinística",
+                "NP resolve problemas indecidíveis",
+                "NP é sempre igual a P",
+                "NP significa problemas não solucionáveis"
+            ],
+            "answer": "NP permite verificar soluções em tempo polinomial usando uma máquina não determinística",
+            "oracle_hint": "A ideia é que uma máquina não determinística pode 'adivinhar' uma solução e depois verificar rapidamente.",
+            "explanation": "NP é a classe de problemas verificáveis em tempo polinomial em uma máquina não determinística."
+        }
+    ]
+}
