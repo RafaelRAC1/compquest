@@ -7,11 +7,9 @@ def pick_questions():
     medium = db_manager.get_questions_by_difficulty("medio", 4)
     hard = db_manager.get_questions_by_difficulty("dificil", 2)
     
-    # Convert database format to the format expected by game logic
     questions = []
     
     for q in easy + medium + hard:
-        # Find the correct answer
         correct_answer = None
         options = []
         
@@ -20,14 +18,13 @@ def pick_questions():
             if option['correct']:
                 correct_answer = option['text']
         
-        # Convert to the format expected by the game
         question_data = {
             "question": q['question'],
             "options": options,
             "answer": correct_answer,
             "oracle_hint": q['hint'],
             "explanation": q['explanation'],
-            "id": q['id']  # Store question ID for tracking
+            "id": q['id'] 
         }
         questions.append(question_data)
     
