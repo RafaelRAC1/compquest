@@ -1,5 +1,6 @@
 from .session_manager import session_manager
 from .websocket_manager import websocket_manager
+from ..database import db_manager
 import time
 import asyncio
 
@@ -28,6 +29,8 @@ class GameLogic:
         session["players_ready"] = set()
 
         print(f"Sending question {idx + 1} for session {session_id}")
+        print(f"Question: {question['question']}")
+        print(f"Options: {question['options']}")
         print(f"Correct answer: '{question['answer']}'")
 
         message = {
@@ -139,11 +142,35 @@ class GameLogic:
         max_score = max(final_scores.values()) if final_scores.values() else 0
         winners = [p for p, s in final_scores.items() if s == max_score]
         
+        await self._save_game_results(session_id, final_scores, winners)
+        
         await websocket_manager.broadcast_to_session(session_id, {
             "event": "game_over",
             "final_scores": final_scores,
             "winners": winners,
             "is_tie": len(winners) > 1
         })
+    
+    async def _save_game_results(self, session_id: str, final_scores: dict, winners: list):
+        """Save game results to database"""
+        try:
+            match_id = db_manager.create_match()
+            
+            question_ids = []
+            if "questions" in session_manager.get_session(session_id):
+                question_ids = [q.get("id") for q in session_manager.get_session(session_id)["questions"] if q.get("id")]
+            
+            if question_ids:
+                db_manager.add_questions_to_match(match_id, question_ids)
+            
+            for player_name, score in final_scores.items():
+                player_id = db_manager.get_or_create_player(player_name)
+                won = player_name in winners
+                db_manager.save_match_result(match_id, player_id, score, won)
+            
+            print(f"Game results saved to database for match {match_id}")
+            
+        except Exception as e:
+            print(f"Error saving game results: {e}")
 
 game_logic = GameLogic()
