@@ -17,11 +17,10 @@ let currentQuestion = null;
 function updateStatus(message, isLoading = false) {
     connectionStatus.innerHTML = `<p class="${isLoading ? 'loading' : ''}">${message}</p>`;
 }
-
 async function startSession() {
     playerName = inputName.value.trim();
     if (!playerName) {
-        alert("Digite seu apelido!");
+        updateStatus("Por favor, digite seu apelido!");
         return;
     }
 
@@ -55,7 +54,7 @@ async function startSession() {
 async function findSession() {
     playerName = inputName.value.trim();
     if (!playerName) {
-        alert("Digite seu apelido!");
+        updateStatus("Por favor, digite seu apelido!");
         return;
     }
 
@@ -84,7 +83,7 @@ async function findSession() {
     } catch (error) {
         console.error("Erro ao entrar em sessão:", error);
         if (error.message.includes("No available sessions")) {
-            updateStatus("Nenhuma sessão disponível. Crie uma nova sessão!");
+            updateStatus("Nenhuma sessão disponível. Crie uma nova!");
         } else {
             updateStatus("Erro ao entrar em sessão. Verifique se o servidor está rodando.");
         }
@@ -102,7 +101,7 @@ function connectWS(sessionId) {
 
     ws.onopen = () => {
         console.log("WebSocket conectado com sucesso!");
-        updateStatus("Conectado! Aguardando...");
+        updateStatus("Conectado! Aguardando oponente...");
     };
 
     ws.onmessage = (event) => {
@@ -111,10 +110,10 @@ function connectWS(sessionId) {
 
         if (data.event === "session_ready") {
             console.log("Sessão pronta:", data.session);
-            updateStatus(`Jogo iniciado! Jogadores: ${data.session.players.join(", ")}`);
+            updateStatus(`Jogo iniciado! Jogadores: ${data.session.players.join(", ")}`)
 
             lobbyForm.style.display = "none";
-            gameArea.style.display = "block";
+            gameArea.style.display = "flex";
         }
 
         if (data.event === "new_question") {
@@ -122,9 +121,7 @@ function connectWS(sessionId) {
             currentQuestion = data.question;
             questionText.textContent = `Questão ${data.index || ''}: ${currentQuestion.question}`;
 
-            optionsDiv.innerHTML = `<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px; border-radius: 8px; margin: 10px 0;">
-                        <strong>💡 Dica do Oráculo:</strong> ${currentQuestion.oracle_hint || 'Pense bem antes de responder!'}
-                    </div>`;
+            optionsDiv.innerHTML = `<p><strong><i class="fas fa-lightbulb"></i> Dica do Oráculo:</strong> ${currentQuestion.oracle_hint || 'Pense bem antes de responder!'}</p>`;
 
             answerButtons.innerHTML = "";
 
@@ -139,7 +136,7 @@ function connectWS(sessionId) {
             });
 
             status.textContent = "⚡ Seja o primeiro a responder!";
-            status.style.color = "#28a745";
+            status.style.color = "var(--success-color)";
         }
 
         if (data.event === "player_answered") {
@@ -148,20 +145,20 @@ function connectWS(sessionId) {
 
             if (data.player === playerName) {
                 status.textContent = "✅ Você respondeu primeiro! Aguardando resultado...";
-                status.style.color = "#007bff";
+                status.style.color = "var(--primary-color)";
             } else {
                 status.textContent = `❌ ${data.player} respondeu primeiro! Você perdeu esta rodada.`;
-                status.style.color = "#dc3545";
+                status.style.color = "var(--error-color)";
             }
         }
 
         if (data.event === "round_result") {
             const isWinner = data.winner === playerName;
             const resultMsg = data.correct ?
-                `🎉 ${data.winner} escolheu "${data.answer_letter}) ${data.answer}" e acertou!\n\nResposta correta: ${data.correct_answer}\n\nExplicação: ${data.explanation}` :
-                `😔 ${data.winner} escolheu "${data.answer_letter}) ${data.answer}" e errou.\n\nResposta correta: ${data.correct_answer}\n\nExplicação: ${data.explanation}`;
+                `🎉 ${data.winner} escolheu "${data.answer_letter}) ${data.answer}" e acertou!\n\nResposta Correta: ${data.correct_answer}\n\nExplicação: ${data.explanation}` :
+                `😔 ${data.winner} escolheu "${data.answer_letter}) ${data.answer}" e errou.\n\nResposta Correta: ${data.correct_answer}\n\nExplicação: ${data.explanation}`;
 
-            let scoreText = "\n\nPlacar atual:\n" + Object.entries(data.scores)
+            let scoreText = "\n\nPlacar Atual:\n" + Object.entries(data.scores)
                 .map(([p, s]) => `${p}: ${s} pontos`)
                 .join("\n");
 
@@ -170,13 +167,13 @@ function connectWS(sessionId) {
             if (confirmed) {
                 ws.send(JSON.stringify({ event: "ready_next" }));
                 status.textContent = "⏳ Aguardando outro jogador confirmar...";
-                status.style.color = "#ffc107";
+                status.style.color = "var(--accent-color)";
             }
         }
 
         if (data.event === "both_ready") {
             status.textContent = "✅ Ambos confirmaram! Próxima questão chegando...";
-            status.style.color = "#28a745";
+            status.style.color = "var(--success-color)";
         }
 
         if (data.event === "game_over") {
@@ -189,7 +186,7 @@ function connectWS(sessionId) {
                 .map(([p, s]) => `${p}: ${s} pontos`)
                 .join("\n");
 
-            alert(`Fim do jogo!\nPlacar final:\n${scoreText}\n\nResultado: ${winner}`);
+            alert(`Fim de Jogo!\nPlacar Final:\n${scoreText}\n\nResultado: ${winner}`);
 
             gameArea.style.display = "none";
             lobbyForm.style.display = "flex";
@@ -220,7 +217,7 @@ function submitAnswer(selectedOption) {
     buttons.forEach(btn => btn.disabled = true);
 
     status.textContent = "🚀 Enviando resposta...";
-    status.style.color = "#ffc107";
+    status.style.color = "var(--accent-color)";
 }
 
 document.addEventListener("keypress", (e) => {
