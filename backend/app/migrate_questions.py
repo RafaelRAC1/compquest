@@ -3,7 +3,7 @@ import os
 from .database import db_manager
 
 def migrate_questions():
-    """Migrate questions from JSON to SQLite database"""
+    """Migra questões do JSON para o banco de dados SQLite"""
     
     json_path = os.path.join(os.path.dirname(__file__), 'data', 'questions.json')
     
@@ -48,7 +48,7 @@ def migrate_questions():
                 
                 question_id = cursor.lastrowid
                 
-                # Insert alternatives
+                # Insere alternativas
                 correct_answer = question_data['answer']
                 options = question_data['options']
                 
@@ -62,7 +62,7 @@ def migrate_questions():
                     """, (option, letter, is_correct, question_id))
         
         conn.commit()
-        print("Questions migrated successfully!")
+        print("Questões migradas com sucesso!")
 
 if __name__ == "__main__":
     migrate_questions()

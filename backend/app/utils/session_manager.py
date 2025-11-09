@@ -15,6 +15,9 @@ class SessionManager:
             "questions": questions,
             "current_index": 0,
             "scores": {player_name: 0},
+            "streaks": {player_name: 0},
+            "has_used_turing": {player_name: False},
+            "has_used_memory_stick": {player_name: False},
             "round_answered": False,
             "round_winner": None,
             "round_answer": None,
@@ -33,6 +36,9 @@ class SessionManager:
         
         session["players"].append(player_name)
         session["scores"][player_name] = 0
+        session["streaks"][player_name] = 0
+        session["has_used_turing"][player_name] = False
+        session["has_used_memory_stick"][player_name] = False
         
         if len(session["players"]) == 2:
             session["status"] = "ready"
