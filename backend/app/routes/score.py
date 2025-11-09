@@ -1,9 +1,10 @@
 from fastapi import status, HTTPException
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from typing import List, Optional
 from ..database import db_manager
+from app.utils.auth import verify_token
 
 router = APIRouter(prefix="/compquest")
 
@@ -28,7 +29,7 @@ class PlayerStatsResponse(BaseModel):
     best_score: int
 
 @router.post("/score")
-async def save_score(score_request: ScoreRequest):
+async def save_score(score_request: ScoreRequest, token: bool = Depends(verify_token)):
     try:
         player_id = db_manager.get_or_create_player(score_request.player_name)
         
@@ -58,7 +59,7 @@ async def save_score(score_request: ScoreRequest):
         raise HTTPException(status_code=500, detail=f"Error saving score: {str(e)}")
 
 @router.get("/score/{player_name}")
-async def get_player_stats(player_name: str):
+async def get_player_stats(player_name: str, token: bool = Depends(verify_token)):
     try:
         stats = db_manager.get_player_stats(player_name)
         return PlayerStatsResponse(**stats)
@@ -66,7 +67,7 @@ async def get_player_stats(player_name: str):
         raise HTTPException(status_code=500, detail=f"Error getting player stats: {str(e)}")
 
 @router.get("/score")
-async def get_all_scores():
+async def get_all_scores(token: bool = Depends(verify_token)):
     try:
         with db_manager.get_connection() as conn:
             cursor = conn.cursor()
@@ -92,3 +93,11 @@ async def get_all_scores():
             return {"scores": scores}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error getting scores: {str(e)}")
+
+@router.get("/top-players")
+async def get_top_players(limit: int = 3, token: bool = Depends(verify_token)):
+    try:
+        top_players = db_manager.get_top_players(limit)
+        return {"top_players": top_players}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting top players: {str(e)}")

@@ -1,22 +1,26 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from app.utils.Player import Player
 from app.utils.pick_questions import pick_questions
 from app.utils.session_manager import session_manager
 from app.utils.websocket_manager import websocket_manager
 from app.utils.game_logic import game_logic
+from app.utils.auth import verify_token
 import random
 import asyncio
 
 router = APIRouter(prefix="/compquest")
 
 @router.post("/launch")
-async def create_session(player: Player):
+async def create_session(player: Player, token: bool = Depends(verify_token)):
     questions = pick_questions()
+    print(f"Criando sessão com {len(questions)} questões")
     session_id = session_manager.create_session(player.name, questions)
+    session = session_manager.get_session(session_id)
+    print(f"Sessão criada: {session_id}, questões na sessão: {len(session.get('questions', []))}")
     return {"session_id": session_id, "message": "Session created, waiting for second player."}
 
 @router.post("/join-session/{session_id}")
-async def join_session(session_id: str, player: Player):
+async def join_session(session_id: str, player: Player, token: bool = Depends(verify_token)):
     session = session_manager.get_session(session_id)
     if not session:
         raise HTTPException(status_code=404, detail="Session not found")
@@ -37,7 +41,7 @@ async def join_session(session_id: str, player: Player):
         return {"session_id": session_id, "message": "Waiting for second player...", "players": session["players"]}
 
 @router.post("/join-random-session")
-async def join_random_session(player: Player):
+async def join_random_session(player: Player, token: bool = Depends(verify_token)):
     available_sessions = session_manager.get_available_sessions()
     if not available_sessions:
         raise HTTPException(status_code=404, detail="No available sessions found")
@@ -58,14 +62,14 @@ async def join_random_session(player: Player):
         return {"session_id": session_id, "message": "Waiting for second player...", "players": session["players"]}
 
 @router.get("/session/{session_id}")
-def get_session(session_id: str):
+def get_session(session_id: str, token: bool = Depends(verify_token)):
     session = session_manager.get_session(session_id)
     if not session:
         raise HTTPException(status_code=404, detail="Session not found")
     return session
 
 @router.get("/sessions")
-def get_all_sessions():
+def get_all_sessions(token: bool = Depends(verify_token)):
     return {
         "total_sessions": len(session_manager.sessions),
         "waiting_sessions": len([s for s in session_manager.sessions.values() if s["status"] == "waiting"]),
@@ -74,11 +78,13 @@ def get_all_sessions():
     }
 
 async def _notify_session_ready(session_id: str):
-    print(f"Notifying session ready: {session_id}")
+    print(f"Notificando sessão pronta: {session_id}")
     session = session_manager.get_session(session_id)
     
     session_data = session.copy()
     session_data["players_ready"] = list(session.get("players_ready", set()))
+    session_data["has_used_turing"] = session.get("has_used_turing", {})
+    session_data["has_used_memory_stick"] = session.get("has_used_memory_stick", {})
     
     await websocket_manager.broadcast_to_session(session_id, {
         "event": "session_ready",
