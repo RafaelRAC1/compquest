@@ -9,14 +9,14 @@ class DatabaseManager:
         self.init_database()
     
     def init_database(self):
-        """Initialize the database with all tables and constraints"""
+        """Inicializa o banco de dados com todas as tabelas e restrições"""
         with self.get_connection() as conn:
             cursor = conn.cursor()
             
-            # Enable foreign keys
+            # Habilita chaves estrangeiras
             cursor.execute("PRAGMA foreign_keys = ON;")
             
-            # Create categoria table
+            # Cria tabela categoria
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS categoria (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -25,7 +25,7 @@ class DatabaseManager:
                 )
             """)
             
-            # Create pergunta table
+            # Cria tabela pergunta
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS pergunta (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -37,7 +37,7 @@ class DatabaseManager:
                 )
             """)
             
-            # Create alternativa table
+            # Cria tabela alternativa
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS alternativa (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -51,7 +51,7 @@ class DatabaseManager:
                 )
             """)
             
-            # Create jogador table
+            # Cria tabela jogador
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS jogador (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -59,7 +59,7 @@ class DatabaseManager:
                 )
             """)
             
-            # Create partida table
+            # Cria tabela partida
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS partida (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -67,7 +67,7 @@ class DatabaseManager:
                 )
             """)
             
-            # Create joga table (associative entity)
+            # Cria tabela joga (entidade associativa)
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS joga (
                     id_jogador INTEGER NOT NULL,
@@ -82,7 +82,7 @@ class DatabaseManager:
                 )
             """)
             
-            # Create contem table (associative entity)
+            # Cria tabela contem (entidade associativa)
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS contem (
                     id_partida INTEGER NOT NULL,
@@ -93,7 +93,7 @@ class DatabaseManager:
                 )
             """)
             
-            # Create indexes
+            # Cria índices
             cursor.execute("CREATE INDEX IF NOT EXISTS idx_pergunta_categoria ON pergunta(id_categoria)")
             cursor.execute("CREATE INDEX IF NOT EXISTS idx_alternativa_pergunta ON alternativa(id_pergunta)")
             cursor.execute("CREATE INDEX IF NOT EXISTS idx_joga_jogador ON joga(id_jogador)")
@@ -103,7 +103,7 @@ class DatabaseManager:
     
     @contextmanager
     def get_connection(self):
-        """Context manager for database connections"""
+        """Gerenciador de contexto para conexões com o banco de dados"""
         conn = sqlite3.connect(self.db_path)
         conn.row_factory = sqlite3.Row
         try:
@@ -112,24 +112,24 @@ class DatabaseManager:
             conn.close()
     
     def get_or_create_player(self, player_name: str) -> int:
-        """Get player ID or create if doesn't exist"""
+        """Obtém ID do jogador ou cria se não existir"""
         with self.get_connection() as conn:
             cursor = conn.cursor()
             
-            # Try to get existing player
+            # Tenta obter jogador existente
             cursor.execute("SELECT id FROM jogador WHERE nome = ?", (player_name,))
             result = cursor.fetchone()
             
             if result:
                 return result['id']
             
-            # Create new player
+            # Cria novo jogador
             cursor.execute("INSERT INTO jogador (nome) VALUES (?)", (player_name,))
             conn.commit()
             return cursor.lastrowid
     
     def create_match(self) -> int:
-        """Create a new match and return its ID"""
+        """Cria uma nova partida e retorna seu ID"""
         with self.get_connection() as conn:
             cursor = conn.cursor()
             cursor.execute("INSERT INTO partida (data) VALUES (CURRENT_TIMESTAMP)")
@@ -137,7 +137,7 @@ class DatabaseManager:
             return cursor.lastrowid
     
     def save_match_result(self, match_id: int, player_id: int, score: int, won: bool = False):
-        """Save player's result for a match"""
+        """Salva resultado do jogador para uma partida"""
         with self.get_connection() as conn:
             cursor = conn.cursor()
             cursor.execute("""
@@ -147,7 +147,7 @@ class DatabaseManager:
             conn.commit()
     
     def add_questions_to_match(self, match_id: int, question_ids: List[int]):
-        """Add questions used in a match"""
+        """Adiciona questões usadas em uma partida"""
         with self.get_connection() as conn:
             cursor = conn.cursor()
             for question_id in question_ids:
@@ -158,7 +158,7 @@ class DatabaseManager:
             conn.commit()
     
     def get_questions_by_difficulty(self, difficulty: str, limit: int = None) -> List[Dict[str, Any]]:
-        """Get questions by difficulty level"""
+        """Obtém questões por nível de dificuldade"""
         with self.get_connection() as conn:
             cursor = conn.cursor()
             
@@ -178,7 +178,7 @@ class DatabaseManager:
             
             questions = []
             for row in cursor.fetchall():
-                # Get alternatives for this question
+                # Obtém alternativas para esta questão
                 cursor.execute("""
                     SELECT nome, letra, correta
                     FROM alternativa
@@ -206,7 +206,7 @@ class DatabaseManager:
             return questions
     
     def get_all_questions(self) -> List[Dict[str, Any]]:
-        """Get all questions with their alternatives"""
+        """Obtém todas as questões com suas alternativas"""
         with self.get_connection() as conn:
             cursor = conn.cursor()
             
@@ -219,7 +219,7 @@ class DatabaseManager:
             
             questions = []
             for row in cursor.fetchall():
-                # Get alternatives for this question
+                # Obtém alternativas para esta questão
                 cursor.execute("""
                     SELECT nome, letra, correta
                     FROM alternativa
@@ -247,14 +247,14 @@ class DatabaseManager:
             return questions
     
     def get_player_stats(self, player_name: str) -> Dict[str, Any]:
-        """Get player statistics"""
+        """Obtém estatísticas do jogador"""
         with self.get_connection() as conn:
             cursor = conn.cursor()
             
-            # Get player ID
+            # Obtém ID do jogador
             player_id = self.get_or_create_player(player_name)
             
-            # Get match statistics
+            # Obtém estatísticas de partidas
             cursor.execute("""
                 SELECT 
                     COUNT(*) as total_matches,
@@ -276,6 +276,39 @@ class DatabaseManager:
                 'wins': stats['wins'] or 0,
                 'best_score': stats['best_score'] or 0
             }
+    
+    def has_questions(self) -> bool:
+        """Verifica se o banco de dados possui questões"""
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT COUNT(*) as count FROM pergunta")
+            result = cursor.fetchone()
+            return result['count'] > 0 if result else False
+    
+    def get_top_players(self, limit: int = 3) -> List[Dict[str, Any]]:
+        """Obtém os melhores jogadores por pontuação máxima"""
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            
+            cursor.execute("""
+                SELECT 
+                    jg.nome,
+                    MAX(j.score) as max_score
+                FROM joga j
+                JOIN jogador jg ON j.id_jogador = jg.id
+                GROUP BY j.id_jogador, jg.nome
+                ORDER BY max_score DESC
+                LIMIT ?
+            """, (limit,))
+            
+            players = []
+            for row in cursor.fetchall():
+                players.append({
+                    'player_name': row['nome'],
+                    'max_score': row['max_score'] or 0
+                })
+            
+            return players
 
-# Global database manager instance
+# Instância global do gerenciador de banco de dados
 db_manager = DatabaseManager()
