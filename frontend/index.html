@@ -20,6 +20,13 @@
             <p>UMA BATALHA DE QUIZ SOBRE COMPUTABILIDADE E COMPLEXIDADE</p>
         </header>
 
+        <div id="scoreboard-container">
+            <h3><i class="fas fa-trophy"></i> Top 3 Jogadores</h3>
+            <div id="scoreboard">
+                <div class="scoreboard-loading">Carregando...</div>
+            </div>
+        </div>
+
         <form id="lobby-form">
             <div class="input-group">
                 <i class="fas fa-user"></i>
@@ -45,6 +52,23 @@
             </div>
         </div>
     </div>
+
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+            </div>
+            <div class="modal-body">
+                <div id="modal-message"></div>
+                <div id="modal-scores" class="modal-scores"></div>
+                <div id="modal-streaks" class="modal-streaks"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-next-btn" class="primary-btn">Próxima</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/index_scripts.js"></script>
 </body>
 
