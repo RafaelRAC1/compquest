@@ -1,29 +1,27 @@
-from fastapi import Header, HTTPException, status
-from typing import Annotated
+from fastapi import HTTPException, status, Security
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from typing import Optional
 
 # Token de autenticação fixo
 AUTH_TOKEN = "my_secret_token"
 
-async def verify_token(authorization: Annotated[str | None, Header()] = None):
+# Configura o esquema de segurança Bearer para Swagger
+# auto_error=False permite que tratemos o erro manualmente
+security = HTTPBearer(auto_error=False)
+
+async def verify_token(credentials: Optional[HTTPAuthorizationCredentials] = Security(security)):
     """
     Verifica o token de autenticação do cabeçalho Authorization.
     Levanta HTTPException com 401 se o token estiver ausente ou inválido.
     """
-    if not authorization:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail={"error": "Token inválido ou ausente"}
-        )
-    
-    # Verifica se começa com "Bearer "
-    if not authorization.startswith("Bearer "):
+    if not credentials:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail={"error": "Token inválido ou ausente"}
         )
     
     # Extrai o token
-    token = authorization[7:]  # Remove o prefixo "Bearer "
+    token = credentials.credentials
     
     # Valida o token
     if token != AUTH_TOKEN:
