@@ -49,9 +49,6 @@ Ensinar conceitos de Ciência da Computação através de uma abordagem lúdica 
 - **VS Code** - Editor de código recomendado
 - **Postman / Swagger UI** - Testes de API durante desenvolvimento
 
-### Deploy
-- **Docker** - Containerização para deploy simplificado
-- **Docker Compose** - Orquestração de containers
 
 ## 🎮 Funcionalidades Principais
 
