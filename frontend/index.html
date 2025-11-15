@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPQUEST</title>
+    <link rel="stylesheet" type="text/css" href="css/index_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="background-animation"></div>
+    <div class="game-window">
+        <header class="menu-header">
+            <h1>COMPQUEST</h1>
+            <p>UMA BATALHA DE QUIZ SOBRE COMPUTABILIDADE E COMPLEXIDADE</p>
+        </header>
+
+        <div id="scoreboard-container">
+            <h3><i class="fas fa-trophy"></i> Top 3 Jogadores</h3>
+            <div id="scoreboard">
+                <div class="scoreboard-loading">Carregando...</div>
+            </div>
+        </div>
+
+        <form id="lobby-form">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="player-name" placeholder="Digite seu apelido" required>
+            </div>
+            <button type="button" id="start-session" class="primary-btn">
+                <i class="fas fa-plus-circle"></i> Criar Sessão
+            </button>
+            <button type="button" id="find-session" class="secondary-btn">
+                <i class="fas fa-search"></i> Entrar em uma Sessão
+            </button>
+            <div id="connection-status"></div>
+        </form>
+
+        <div id="game-area" style="display:none;">
+            <div id="question-header">
+                <h3 id="question-text"></h3>
+                <p id="status"></p>
+            </div>
+            <div id="options-container">
+                <div id="options"></div>
+                <div id="answer-buttons"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+            </div>
+            <div class="modal-body">
+                <div id="modal-message"></div>
+                <div id="modal-scores" class="modal-scores"></div>
+                <div id="modal-streaks" class="modal-streaks"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-next-btn" class="primary-btn">Próxima</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/index_scripts.js"></script>
+</body>
+
+</html>
