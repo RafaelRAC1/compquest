@@ -168,40 +168,89 @@ pip install -r requirements.txt
 python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-### 5. Abrir o Frontend
+### 5. Configurar Variáveis de Ambiente e Autenticação
 
-Abra o arquivo `frontend/index.html` no seu navegador ou use um servidor local:
+#### Token de Autenticação
+O projeto utiliza autenticação por token Bearer. O token padrão está configurado no arquivo `app/utils/auth.py`:
 
-```bash
-# Usando Python
-cd frontend
-python -m http.server 8080
+```python
+AUTH_TOKEN = "my_secret_token"
 ```
 
-Acesse: `http://localhost:8080`
+**⚠️ Importante:** Para produção, recomenda-se usar variáveis de ambiente. Por enquanto, o token está hardcoded como `"my_secret_token"`.
 
-### 6. Testar Endpoint /health
+**Como usar o token:**
+- **REST API:** Inclua no cabeçalho: `Authorization: Bearer my_secret_token`
+- **WebSocket:** Pode ser enviado via cabeçalho ou parâmetro de query: `?token=my_secret_token`
 
-**Importante**: Todas as requisições requerem autenticação via token Bearer.
+### 6. Abrir o Jogo no Navegador
 
-**Método 1 - Swagger UI (Recomendado):**
+Com o servidor rodando, abra o arquivo `index.html` do frontend em **dois navegadores diferentes**:
+
+**Caminho do arquivo:** `compquest/frontend/index.html`
+
+**Abrir diretamente**
+- Navegue até a pasta `frontend` e abra o arquivo `index.html` no navegador A
+- Repita em outro navegador B, colando o link do navegador A
+
+Depois acesse: `http://localhost:8080/index.html` em ambos os navegadores
+
+### 7. Jogar uma Partida
+
+1. **No primeiro navegador:**
+   - Digite o nome do jogador (ex: "Jogador1")
+   - Clique em **"Criar Sessão"**
+   - Aguarde a mensagem de que a sessão foi criada
+
+2. **No segundo navegador:**
+   - Digite o nome do jogador (ex: "Jogador2")
+   - Clique em **"Entrar em uma Sessão"**
+   - O sistema encontrará automaticamente a sessão criada
+
+3. **A partida começará automaticamente:**
+   - Ambos os jogadores verão a primeira pergunta
+   - Selecione uma das opções de resposta
+   - O jogo continuará com as próximas perguntas (total de 10)
+
+4. **Ao final da partida:**
+   - Os jogadores serão informados sobre o vencedor e a pontuação final
+   - Clique em **"Voltar ao Menu"** para iniciar uma nova partida
+
+**Nota:** Para testar as rotas da API, acesse a documentação interativa do Swagger em `http://localhost:8000/docs`
+
+---
+
+## 📡 Principais Rotas da API
+
+Todas as rotas estão prefixadas com `/compquest` e requerem autenticação via token Bearer.
+
+### Tabela de Rotas
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | `/compquest/health` | Verifica status do servidor e estatísticas de sessões |
+| POST | `/compquest/launch` | Cria uma nova sessão de jogo |
+| POST | `/compquest/join-session/{session_id}` | Entra em uma sessão específica |
+| POST | `/compquest/join-random-session` | Entra automaticamente em uma sessão disponível |
+| GET | `/compquest/session/{session_id}` | Obtém informações de uma sessão |
+| GET | `/compquest/sessions` | Lista todas as sessões ativas |
+| POST | `/compquest/score` | Salva pontuação de um jogador |
+| GET | `/compquest/score/{player_name}` | Obtém estatísticas de um jogador |
+| GET | `/compquest/score` | Lista últimos 50 resultados |
+| GET | `/compquest/top-players` | Obtém ranking dos melhores jogadores |
+| WS | `/compquest/ws/{session_id}/{player_name}` | Conexão WebSocket para jogo em tempo real |
+
+### 🔍 Rotas de Health e Status
+
+#### `GET /compquest/health`
+Verifica o status do servidor e estatísticas de sessões.
+
+**Headers:**
 ```
-http://localhost:8000/docs
-```
-Clique em "Authorize" e insira: `Bearer my_secret_token`
-
-**Método 2 - Terminal (curl):**
-```bash
-curl -X GET http://localhost:8000/compquest/health \
-  -H "Authorization: Bearer my_secret_token"
+Authorization: Bearer my_secret_token
 ```
 
-**Método 3 - Navegador:**
-```
-http://localhost:8000/compquest/health?token=my_secret_token
-```
-
-### Resposta Esperada
+**Resposta:**
 ```json
 {
   "status": "Running!",
@@ -213,7 +262,294 @@ http://localhost:8000/compquest/health?token=my_secret_token
 }
 ```
 
-**Status Code:** `200 OK`
+**Teste no Swagger:** Acesse `http://localhost:8000/docs` e teste a rota diretamente na interface.
+
+---
+
+### 🎮 Rotas de Sessão e Jogo
+
+#### `POST /compquest/launch`
+Cria uma nova sessão de jogo para um jogador.
+
+**Body (JSON):**
+```json
+{
+  "name": "Jogador1"
+}
+```
+
+**Resposta:**
+```json
+{
+  "session_id": "abc123-def456-ghi789",
+  "message": "Session created, waiting for second player."
+}
+```
+
+**Teste no Swagger:** Acesse `http://localhost:8000/docs` e teste a rota diretamente na interface.
+
+---
+
+#### `POST /compquest/join-session/{session_id}`
+Permite que um segundo jogador entre em uma sessão existente.
+
+**Parâmetros:**
+- `session_id` (path) - ID da sessão retornado por `/launch`
+
+**Body (JSON):**
+```json
+{
+  "name": "Jogador2"
+}
+```
+
+**Resposta (quando há 2 jogadores):**
+```json
+{
+  "session_id": "abc123-def456-ghi789",
+  "message": "Game ready!",
+  "players": ["Jogador1", "Jogador2"]
+}
+```
+
+**Teste no Swagger:** Acesse `http://localhost:8000/docs` e teste a rota diretamente na interface.
+
+---
+
+#### `POST /compquest/join-random-session`
+Entra automaticamente em uma sessão aleatória disponível.
+
+**Body (JSON):**
+```json
+{
+  "name": "Jogador2"
+}
+```
+
+**Teste no Swagger:** Acesse `http://localhost:8000/docs` e teste a rota diretamente na interface.
+
+---
+
+#### `GET /compquest/session/{session_id}`
+Obtém informações sobre uma sessão específica.
+
+**Teste no Swagger:** Acesse `http://localhost:8000/docs` e teste a rota diretamente na interface.
+
+---
+
+#### `GET /compquest/sessions`
+Lista todas as sessões ativas.
+
+**Teste no Swagger:** Acesse `http://localhost:8000/docs` e teste a rota diretamente na interface.
+
+---
+
+### 📊 Rotas de Pontuação e Ranking
+
+#### `POST /compquest/score`
+Salva a pontuação de um jogador após uma partida.
+
+**Body (JSON):**
+```json
+{
+  "player_name": "Jogador1",
+  "score": 1500,
+  "won": true
+}
+```
+
+**Resposta:**
+```json
+{
+  "player_name": "Jogador1",
+  "score": 1500,
+  "won": true,
+  "match_id": 1,
+  "date": "2024-01-15 10:30:00"
+}
+```
+
+**Teste no Swagger:** Acesse `http://localhost:8000/docs` e teste a rota diretamente na interface.
+
+---
+
+#### `GET /compquest/score/{player_name}`
+Obtém estatísticas de um jogador específico.
+
+**Resposta:**
+```json
+{
+  "player_name": "Jogador1",
+  "total_matches": 5,
+  "total_score": 7500,
+  "avg_score": 1500.0,
+  "wins": 3,
+  "best_score": 2000
+}
+```
+
+**Teste no Swagger:** Acesse `http://localhost:8000/docs` e teste a rota diretamente na interface.
+
+---
+
+#### `GET /compquest/score`
+Lista os últimos 50 resultados de partidas.
+
+**Teste no Swagger:** Acesse `http://localhost:8000/docs` e teste a rota diretamente na interface.
+
+---
+
+#### `GET /compquest/top-players?limit=3`
+Obtém os melhores jogadores por pontuação máxima.
+
+**Parâmetros de Query:**
+- `limit` (opcional) - Número de jogadores a retornar (padrão: 3)
+
+**Resposta:**
+```json
+{
+  "top_players": [
+    {
+      "player_name": "Jogador1",
+      "max_score": 2000
+    },
+    {
+      "player_name": "Jogador2",
+      "max_score": 1800
+    }
+  ]
+}
+```
+
+**Teste no Swagger:** Acesse `http://localhost:8000/docs` e teste a rota diretamente na interface.
+
+---
+
+### 🔌 WebSocket - Comunicação em Tempo Real
+
+#### `WS /compquest/ws/{session_id}/{player_name}`
+Conexão WebSocket para comunicação em tempo real durante o jogo.
+
+**Parâmetros:**
+- `session_id` - ID da sessão
+- `player_name` - Nome do jogador
+
+**Autenticação:**
+- Via cabeçalho: `Authorization: Bearer my_secret_token`
+- Via query parameter: `?token=my_secret_token`
+
+**Eventos Enviados pelo Cliente:**
+```json
+// Enviar resposta
+{
+  "event": "answer",
+  "answer": "Opção A"
+}
+
+// Pronto para próxima questão
+{
+  "event": "ready_next"
+}
+
+// Usar poder do Alan Turing
+{
+  "event": "use_turing"
+}
+
+// Usar pente de troca
+{
+  "event": "use_memory_stick"
+}
+```
+
+**Eventos Recebidos do Servidor:**
+```json
+// Nova questão
+{
+  "event": "new_question",
+  "index": 1,
+  "total": 10,
+  "question": {
+    "question": "Pergunta aqui...",
+    "options": ["Opção A", "Opção B", "Opção C", "Opção D"],
+    "oracle_hint": "Dica do oráculo"
+  }
+}
+
+// Resultado da rodada
+{
+  "event": "round_result",
+  "winner": "Jogador1",
+  "correct_answer": "Opção A",
+  "explanation": "Explicação da resposta"
+}
+
+// Sessão pronta
+{
+  "event": "session_ready",
+  "session": { ... }
+}
+```
+
+**Nota:** A conexão WebSocket é gerenciada automaticamente pelo frontend durante o jogo.
+
+---
+
+## 🔐 Variáveis de Ambiente, Tokens e Portas
+
+### Porta do Servidor
+- **Porta padrão:** `8000`
+- **Host padrão:** `0.0.0.0` (quando executado com uvicorn) ou `127.0.0.1` (quando executado diretamente)
+- **URL base:** `http://localhost:8000`
+
+**Para alterar a porta:**
+```bash
+python -m uvicorn main:app --host 0.0.0.0 --port 8080 --reload
+```
+
+### Token de Autenticação
+- **Token padrão:** `my_secret_token`
+- **Localização:** `app/utils/auth.py` (variável `AUTH_TOKEN`)
+- **Formato:** Bearer Token
+- **Uso:** Todas as rotas REST e WebSocket requerem autenticação
+
+**Como usar:**
+```bash
+# REST API
+Authorization: Bearer my_secret_token
+
+# WebSocket (query parameter)
+ws://localhost:8000/compquest/ws/{session_id}/{player_name}?token=my_secret_token
+```
+
+### Banco de Dados
+- **Tipo:** SQLite
+- **Arquivo:** `compquest.db` (criado automaticamente na raiz do backend)
+- **Localização:** Mesmo diretório onde o servidor é executado
+
+**Estrutura do Banco:**
+- `categoria` - Níveis de dificuldade (fácil, médio, difícil)
+- `pergunta` - Questões do jogo
+- `alternativa` - Opções de resposta
+- `jogador` - Informações dos jogadores
+- `partida` - Histórico de partidas
+- `joga` - Relação jogador-partida com pontuação
+- `contem` - Relação partida-pergunta
+
+---
+
+## 🧪 Testando as Rotas da API
+
+Para testar todas as rotas da API, utilize a documentação interativa do Swagger:
+
+1. **Acesse:** `http://localhost:8000/docs`
+2. **Autenticação:** Clique no botão **"Authorize"** no topo da página
+3. **Token:** Digite `my_secret_token` (sem o prefixo "Bearer")
+4. **Teste as rotas:** Clique em qualquer rota, depois em **"Try it out"** e **"Execute"**
+
+A documentação do Swagger permite testar todas as rotas diretamente no navegador, sem necessidade de ferramentas externas como Postman ou cURL.
+
+---
 
 ## 🧪 Seção de Testes
 
