@@ -168,22 +168,7 @@ pip install -r requirements.txt
 python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-### 5. Configurar Variáveis de Ambiente e Autenticação
-
-#### Token de Autenticação
-O projeto utiliza autenticação por token Bearer. O token padrão está configurado no arquivo `app/utils/auth.py`:
-
-```python
-AUTH_TOKEN = "my_secret_token"
-```
-
-**⚠️ Importante:** Para produção, recomenda-se usar variáveis de ambiente. Por enquanto, o token está hardcoded como `"my_secret_token"`.
-
-**Como usar o token:**
-- **REST API:** Inclua no cabeçalho: `Authorization: Bearer my_secret_token`
-- **WebSocket:** Pode ser enviado via cabeçalho ou parâmetro de query: `?token=my_secret_token`
-
-### 6. Abrir o Jogo no Navegador
+### 5. Abrir o Jogo no Navegador
 
 Com o servidor rodando, abra o arquivo `index.html` do frontend em **dois navegadores diferentes**:
 
@@ -195,7 +180,7 @@ Com o servidor rodando, abra o arquivo `index.html` do frontend em **dois navega
 
 Depois acesse: `http://localhost:8080/index.html` em ambos os navegadores
 
-### 7. Jogar uma Partida
+### 6. Jogar uma Partida
 
 1. **No primeiro navegador:**
    - Digite o nome do jogador (ex: "Jogador1")
