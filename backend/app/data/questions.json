@@ -1,536 +1,536 @@
 {
     "easy_questions": [
-        {
-            "question": "Em uma metrópole coberta por neon e chuva, onde a IA governa, você hackeia um arquivo ultrassecreto. Ele descreve a Máquina de Turing (MT), não como um hardware obsoleto, mas como o fundamento primordial da própria computação. O que é, em sua essência, esta MT?",
-            "options": [
-                "Um tipo de computador físico antigo e esquecido na sucata.",
-                "Um modelo teórico que define o limite de tudo o que pode ser calculado.",
-                "Um algoritmo de criptografia que protege os dados da Corporação.",
-                "O código-fonte de um replicante que atingiu a singularidade."
-            ],
-            "answer": "Um modelo teórico que define o limite de tudo o que pode ser calculado.",
-            "oracle_hint": "Pense na fita infinita e no cabeçote movente: uma abstração pura que simula qualquer cálculo, não um objeto de metal e silício.",
-            "explanation": "A Máquina de Turing é o modelo matemático definitivo. Ela estabeleceu a base de que tudo o que é computável por um hardware moderno é teoricamente simulável por este conceito simples, definindo o que chamamos de computação algorítmica."
-        },
-        {
-            "question": "As lendas urbanas do Underground de Neo-Londres falam de um Cipherpunk visionário do passado, cuja mente criou o modelo da MT, dando origem a toda a era digital (e à sua tirania). Quem é este arquiteto silencioso da nossa realidade computacional?",
-            "options": [
-                "John von Neumann, o criador da arquitetura física dos mainframes.",
-                "Donald Knuth, o Mestre dos Algoritmos de Otimização.",
-                "Alan Turing, o profeta que desenhou o plano da máquina universal.",
-                "Alonzo Church, que desenvolveu o Lambda Calculus."
-            ],
-            "answer": "Alan Turing, o profeta que desenhou o plano da máquina universal.",
-            "oracle_hint": "Procure pelo nome do britânico que, além da teoria, decifrou os códigos da guerra antes da Era Digital.",
-            "explanation": "Alan Turing formalizou o conceito da MT em 1936. Ele é o pai da ciência da computação, e o seu modelo serve como a referência dourada para todos os estudos de computabilidade e complexidade."
-        },
-        {
-            "question": "Na guerra de informação, os problemas 'P' são a chave para a sobrevivência. Eles são aqueles que a Corporação usa para processar dados de forma eficiente e em tempo real. O que caracteriza um problema como pertencente à Classe P?",
-            "options": [
-                "Problemas tão complexos que são impossíveis de resolver, nem mesmo pela IA.",
-                "Problemas que exigem um tempo exponencial de processamento.",
-                "Problemas que podem ser resolvidos por um algoritmo determinístico em tempo polinomial.",
-                "Problemas que só podem ser resolvidos em computadores quânticos."
-            ],
-            "answer": "Problemas que podem ser resolvidos por um algoritmo determinístico em tempo polinomial.",
-            "oracle_hint": "O 'P' aqui não é de 'Poder', mas de 'Polinomial'. Pense na velocidade e eficiência de um cálculo rápido e escalável.",
-            "explanation": "A Classe P (do inglês Polynomial Time) agrupa problemas que conseguimos resolver rapidamente. Um tempo polinomial (O(n^k)) é o padrão de eficiência na teoria da complexidade, significando que o tempo de resolução cresce de forma controlada com o tamanho da entrada."
-        },
-        {
-            "question": "O submundo da criptografia lida com os problemas 'NP': encontrar a solução é uma agonia, mas o Oráculo pode validar um palpite em um piscar de olhos. O que define a Classe NP (Nondeterministic Polynomial Time)?",
-            "options": [
-                "Problemas que não possuem solução conhecida (Não-Polinomial).",
-                "Problemas cuja solução, se fornecida, pode ser verificada rapidamente (em tempo polinomial).",
-                "Problemas que podem ser resolvidos por uma Máquina de Turing não-determinística em tempo exponencial.",
-                "Problemas mais fáceis de resolver do que aqueles na Classe P."
-            ],
-            "answer": "Problemas cuja solução, se fornecida, pode ser verificada rapidamente (em tempo polinomial).",
-            "oracle_hint": "Não é sobre a velocidade de encontrar a chave, mas sim a velocidade de conferir se a chave que você achou está correta.",
-            "explanation": "NP significa que, mesmo que encontrar a resposta seja demorado, podemos verificar se uma solução proposta está correta em tempo polinomial. A grande questão (P vs NP) é se, no fundo, todo problema rápido de verificar é também rápido de resolver."
-        },
-        {
-            "question": "Um perigoso replicante precisa encontrar a rota mais curta que visita todas as 15 zonas de exclusão da cidade. Ele enfrenta o arquétipo da dificuldade: o 'Vendedor Viajante' (TSP). Este é o exemplo mais famoso de um problema na fronteira da dificuldade. A qual classe ele pertence?",
-            "options": [
-                "NP-Completo (NP-C): a chave mestra que, se resolvida rápido, resolve todos os outros problemas NP.",
-                "Classe P: um problema fácil de resolver, como ordenar uma lista de mercadorias.",
-                "Indecidível: não há solução algorítmica possível, ele rodará para sempre.",
-                "Algoritmo de Criptografia Rápida (ACR)."
-            ],
-            "answer": "NP-Completo (NP-C): a chave mestra que, se resolvida rápido, resolve todos os outros problemas NP.",
-            "oracle_hint": "Encontrar o caminho mais curto entre várias cidades é o clássico problema que define a dificuldade máxima dentro da Classe NP.",
-            "explanation": "O Problema do Caixeiro Viajante é NP-completo (NP-C). Isso significa que é um dos problemas mais difíceis na classe NP. Se um dia encontrarmos uma forma eficiente (polinomial) de resolvê-lo, poderemos resolver todos os problemas em NP rapidamente, provando que P = NP."
-        },
-        {
-            "question": "O armazenamento tático da Máquina de Turing é essencial para qualquer operação de hack bem-sucedida. Se a Máquina de Turing é o modelo, qual parte conceitual dela serve como seu mecanismo de memória (para armazenar tanto dados quanto as instruções do programa)?",
-            "options": [
-                "O Cabeçote de leitura e escrita, que processa a informação.",
-                "A Fita (Tape), uma sequência infinita para símbolos e código.",
-                "O Controlador Finito, que define as regras de transição.",
-                "A Unidade Lógica Aritmética (ULA), do processador."
-            ],
-            "answer": "A Fita (Tape), uma sequência infinita para símbolos e código.",
-            "oracle_hint": "Imagine um pergaminho que nunca acaba, onde o agente pode gravar e apagar todos os dados e o script do hack.",
-            "explanation": "A Fita da MT é conceitualmente sua memória e entrada/saída. Ela armazena os símbolos que representam tanto a entrada, o estado intermediário e a saída da computação, seguindo o modelo de fita de um computador antigo."
-        },
-        {
-            "question": "Um programa de IA de reconhecimento de voz falha ao tentar resolver a questão 'este código vai travar em loop?'. No entanto, a teoria garante que certos problemas de decisão sempre terão uma resposta por um algoritmo em tempo finito. Esses são os problemas:",
-            "options": [
-                "Indecidíveis, pois desafiam a lógica.",
-                "Considerados 'Não-Polinomiais' (NP).",
-                "Decidíveis: missões que sempre terão uma solução encontrada por um algoritmo.",
-                "Intratáveis, por exigirem tempo exponencial."
-            ],
-            "answer": "Decidíveis: missões que sempre terão uma solução encontrada por um algoritmo.",
-            "oracle_hint": "Decidível não significa rápido, mas sim que a resposta (SIM ou NÃO, ou um resultado) é garantida de ser encontrada pelo computador, sem travar.",
-            "explanation": "Um problema decidível é aquele para o qual existe um algoritmo (uma Máquina de Turing) que consegue resolvê-lo em um número finito de passos para qualquer entrada. Seu oposto é o indecidível, como o Problema da Parada."
-        },
-        {
-            "question": "A Corporação usa algoritmos que demonstram alta eficiência e escalabilidade, garantindo que o tempo de processamento não exploda quando os dados aumentam. Esse crescimento de tempo controlado é definido por qual conceito?",
-            "options": [
-                "Complexidade Fatorial (e.g., O(n!)).",
-                "Tempo Exponencial (e.g., O(2^n)).",
-                "Tempo Polinomial (e.g., O(n^3)), indicando eficiência.",
-                "Tempo Logarítmico (e.g., O(log n))."
-            ],
-            "answer": "Tempo Polinomial (e.g., O(n^3)), indicando eficiência.",
-            "oracle_hint": "Pense no O(n^k). É rápido o suficiente para ser prático, mesmo que a entrada seja grande.",
-            "explanation": "Tempo polinomial indica eficiência (O(n^k)). Problemas em P são considerados 'tratáveis' porque o tempo que levam para serem resolvidos cresce de forma muito mais lenta e controlada do que o tempo exponencial (O(2^n)), que rapidamente se torna impraticável."
-        },
-        {
-            "question": "Você rouba um manual de criptografia onde se lê: 'Se for rápido de resolver (P), é trivialmente rápido de verificar (NP).' Isso significa que P é o quê de NP?",
-            "options": [
-                "Totalmente separado de NP.",
-                "Idêntico a NP (P = NP).",
-                "Um subconjunto de NP (P ⊆ NP).",
-                "Apenas o conjunto de problemas indecidíveis."
-            ],
-            "answer": "Um subconjunto de NP (P ⊆ NP).",
-            "oracle_hint": "Qualquer problema que pode ser resolvido de forma eficiente também pode ter sua solução verificada de forma eficiente.",
-            "explanation": "Se um problema pode ser resolvido em tempo polinomial (P), a solução encontrada pode ser verificada simplesmente reexecutando o algoritmo de solução. Portanto, P é um subconjunto de NP (P ⊆ NP). A grande questão é se P é um subconjunto estrito ou se P = NP."
-        },
-        {
-            "question": "Para otimizar a distribuição de recursos roubados no Underground, você precisa de um algoritmo que ordene a lista de suprimentos de forma ultrarrápida. Encontrar a Ordenação de uma lista de dados (Sort) pertence à classe de problemas considerada a mais eficiente, que é:",
-            "options": [
-                "Indecidível, por ser muito complexo.",
-                "NP-Completo, pela dificuldade na verificação.",
-                "A Classe P (Tempo Polinomial), pelo seu crescimento controlado.",
-                "A Classe NP-Difícil, pela necessidade de força bruta."
-            ],
-            "answer": "A Classe P (Tempo Polinomial), pelo seu crescimento controlado.",
-            "oracle_hint": "Pense no que seu computador faz de forma rotineira e rápida.",
-            "explanation": "A Ordenação de uma lista é um exemplo clássico de problema em P, pois algoritmos eficientes como Mergesort ou Quicksort o resolvem em tempo O(n log n), que é considerado tempo polinomial e, portanto, eficiente."
-        },
-        {
-            "question": "O seu sistema detecta que o protocolo de comunicação da Corporação se baseia em um problema difícil de quebrar. No entanto, se você tivesse a chave (a solução), a validação dessa chave seria instantânea. Essa característica de verificação rápida define a classe:",
-            "options": [
-                "P (Problemas Polinomiais).",
-                "NP (Nondeterministic Polynomial).",
-                "Indecidível.",
-                "Exponencial."
-            ],
-            "answer": "NP (Nondeterministic Polynomial).",
-            "oracle_hint": "A diferença é entre o esforço de criar uma chave mestra e o esforço de testar se a chave que te deram abre a porta.",
-            "explanation": "A característica principal de NP é que, mesmo que encontrar a resposta (a 'chave') seja um processo demorado, o processo de verificação dessa resposta ('testar a chave') é rápido, levando um tempo polinomial."
-        },
-        {
-            "question": "Qual é a figura histórica, fundamental na teoria da computação e na criptografia da Segunda Guerra, que é considerado o arquiteto intelectual por trás do modelo da Máquina de Turing?",
-            "options": [
-                "Isaac Newton, o físico da gravidade.",
-                "Alan Turing, o matemático britânico e pai da ciência da computação.",
-                "Albert Einstein, o teórico da relatividade.",
-                "Bill Gates, o empresário da tecnologia."
-            ],
-            "answer": "Alan Turing, o matemático britânico e pai da ciência da computação.",
-            "oracle_hint": "Procure pelo matemático que, além da Máquina, deu nome a um famoso teste de inteligência artificial.",
-            "explanation": "Alan Turing é amplamente considerado o pai da ciência da computação teórica e da inteligência artificial. Seus trabalhos sobre decidibilidade, a MT e o Teste de Turing são fundamentais."
-        },
-        {
-            "question": "Você precisa otimizar um daemon de hack e decide medir o custo de operação dele. A medida teórica que contabiliza o número de passos que o algoritmo executa em função do tamanho da entrada é chamada de:",
-            "options": [
-                "Complexidade de Espaço (memória).",
-                "Complexidade de Tempo (passos/operações).",
-                "Complexidade Fatorial (custo n!).",
-                "Latência de Rede (atraso de comunicação)."
-            ],
-            "answer": "Complexidade de Tempo (passos/operações).",
-            "oracle_hint": "É uma contagem teórica de 'passos' do computador, não o tempo cronometrado no relógio.",
-            "explanation": "A complexidade de tempo (O(·)) é uma medida do número de passos elementares (operações) que um algoritmo executa. Ela descreve como o tempo de execução cresce à medida que o tamanho da entrada (n) aumenta."
-        },
-        {
-            "question": "Se o seu hacker encontrasse um algoritmo de tempo polinomial para resolver o Caixeiro Viajante (TSP), o que isso provaria, encerrando a maior questão da ciência da computação?",
-            "options": [
-                "Que o TSP é um problema indecidível.",
-                "Que P = NP: todo problema rápido de verificar também é rápido de resolver.",
-                "Que a Máquina de Turing é obsoleta.",
-                "Que a computação quântica é a única solução."
-            ],
-            "answer": "Que P = NP: todo problema rápido de verificar também é rápido de resolver.",
-            "oracle_hint": "O TSP é NP-Completo. Resolver um NP-C rapidamente é a chave para a prova de P = NP.",
-            "explanation": "O TSP é um problema NP-Completo. Se um algoritmo polinomial for encontrado para um NP-Completo, ele pode ser usado para resolver todos os problemas em NP rapidamente, provando que P = NP."
-        },
-        {
-            "question": "O Firewall de Neo-Tóquio usa um problema que, se resolvido rapidamente, faria todos os problemas NP virarem fáceis. Qual classe de problemas representa este ponto de inflexão máximo da dificuldade em NP?",
-            "options": [
-                "Classe P.",
-                "Classe NP-Difícil.",
-                "Classe NP-Completo (NP-C).",
-                "Problemas Indecidíveis."
-            ],
-            "answer": "Classe NP-Completo (NP-C).",
-            "oracle_hint": "Eles são os mais difíceis de NP, a chave mestra que desbloqueia a resolução de todos os outros.",
-            "explanation": "Os problemas NP-Completos (NP-C) são o subconjunto de NP que é ao mesmo tempo em NP e NP-difícil. Eles são o 'mais difícil' dentro de NP. Se um algoritmo polinomial for encontrado para um NP-Completo, ele pode ser usado para resolver todos os problemas em NP rapidamente, provando P=NP."
-        },
-        {
-            "question": "A Máquina de Turing Universal é a joia da coroa da teoria de Alan Turing. Qual a sua importância conceitual no mundo da computação, sendo o modelo de 'máquina que faz tudo'?",
-            "options": [
-                "Ela é um modelo que só pode resolver equações matemáticas.",
-                "Ela é o modelo de hardware mais eficiente já construído.",
-                "Ela prova que um único computador pode simular qualquer outro programa ou computador.",
-                "Ela é um algoritmo de criptografia inquebrável."
-            ],
-            "answer": "Ela prova que um único computador pode simular qualquer outro programa ou computador.",
-            "oracle_hint": "Pense nela como o conceito por trás de um computador que pode rodar qualquer aplicativo.",
-            "explanation": "A Máquina de Turing Universal (MTU) é um modelo de Máquina de Turing que, dado o código de outra Máquina de Turing, consegue simular seu comportamento. Ela é o modelo teórico de um computador de 'propósito geral' e é o conceito por trás dos computadores modernos programáveis."
-        },
-        {
-            "question": "Um vírus de IA foi projetado para hackear a mente humana, mas trava ao tentar prever se um código de hack malicioso vai terminar de rodar ou travar em um loop infinito. Esse é o problema clássico que prova o limite da computação:",
-            "options": [
-                "O Problema da Soma de Subconjuntos.",
-                "O Problema do Caixeiro Viajante (TSP).",
-                "O Problema da Satisfatibilidade Booleana (SAT).",
-                "O Problema da Parada (Halting Problem)."
-            ],
-            "answer": "O Problema da Parada (Halting Problem).",
-            "oracle_hint": "É a clássica prova de que nem todas as perguntas podem ser respondidas por um computador. O computador não pode prever se outro vai 'parar'.",
-            "explanation": "O Problema da Parada é o exemplo mais famoso de problema indecidível. Alan Turing provou que não existe um algoritmo geral que consiga determinar, para qualquer programa e entrada, se esse programa irá eventualmente parar ou rodar infinitamente."
-        },
-        {
-            "question": "Se um algoritmo de IA pode resolver um problema em tempo polinomial, automaticamente ele está na classe P. Essa classe P é o conjunto dos problemas que são, simultaneamente, eficientes para resolver e eficientes para:",
-            "options": [
-                "Serem indecidíveis.",
-                "Serem resolvidos em tempo exponencial.",
-                "Serem verificados.",
-                "Serem reduzidos a um problema NP-Difícil."
-            ],
-            "answer": "Serem verificados.",
-            "oracle_hint": "Se consigo resolver rápido, também consigo verificar rápido.",
-            "explanation": "A classe P contém problemas que podem ser resolvidos em tempo polinomial. Como a resolução polinomial implica automaticamente a verificação polinomial, P é o conjunto de problemas que são eficientes em ambas as dimensões."
-        },
-        {
-            "question": "O cabeçote de leitura/escrita na Máquina de Turing age como o 'braço robótico' que interage com a memória. Sua função primária, em analogia a um processador simples, é:",
-            "options": [
-                "Gerar números aleatórios para criptografia.",
-                "Mover-se na fita, lendo o símbolo atual e reescrevendo-o de acordo com o estado da máquina.",
-                "Conectar a MT com outras máquinas na rede.",
-                "Executar apenas operações lógicas OR e AND."
-            ],
-            "answer": "Mover-se na fita, lendo o símbolo atual e reescrevendo-o de acordo com o estado da máquina.",
-            "oracle_hint": "É o braço robótico que interage com a memória da máquina (a fita).",
-            "explanation": "O cabeçote é o componente que interage com a fita. Ele lê o símbolo na posição atual, considera o estado interno da máquina, escreve um novo símbolo, e então se move para a esquerda ou direita, mudando para um novo estado interno."
-        }
+      {
+        "question": "Em uma metrópole coberta por neon e chuva, onde a IA governa, você hackeia um arquivo ultrassecreto. Ele descreve a Máquina de Turing (MT), não como um hardware obsoleto, mas como o fundamento primordial da própria computação. O que é, em sua essência, esta MT?",
+        "options": [
+          "Um tipo de computador físico antigo e esquecido na sucata.",
+          "Um modelo teórico que define o limite de tudo o que pode ser calculado.",
+          "Um algoritmo de criptografia que protege os dados da Corporação.",
+          "O código-fonte de um replicante que atingiu a singularidade."
+        ],
+        "answer": "Um modelo teórico que define o limite de tudo o que pode ser calculado.",
+        "oracle_hint": "Pense na fita infinita e no cabeçote movente: uma abstração pura que simula qualquer cálculo, não um objeto de metal e silício.",
+        "explanation": "A Máquina de Turing é o modelo matemático definitivo. Ela estabeleceu a base de que tudo o que é computável por um hardware moderno é teoricamente simulável por este conceito simples, definindo o que chamamos de computação algorítmica."
+      },
+      {
+        "question": "As lendas urbanas do Underground de Neo-Londres falam de um Cipherpunk visionário do passado, cuja mente criou o modelo da MT, dando origem a toda a era digital (e à sua tirania). Quem é este arquiteto silencioso da nossa realidade computacional?",
+        "options": [
+          "John von Neumann, o criador da arquitetura física dos mainframes.",
+          "Donald Knuth, o Mestre dos Algoritmos de Otimização.",
+          "Alan Turing, o profeta que desenhou o plano da máquina universal.",
+          "Alonzo Church, que desenvolveu o Lambda Calculus."
+        ],
+        "answer": "Alan Turing, o profeta que desenhou o plano da máquina universal.",
+        "oracle_hint": "Procure pelo nome do britânico que, além da teoria, decifrou os códigos da guerra antes da Era Digital.",
+        "explanation": "Alan Turing formalizou o conceito da MT em 1936. Ele é o pai da ciência da computação, e o seu modelo serve como a referência dourada para todos os estudos de computabilidade e complexidade."
+      },
+      {
+        "question": "Na guerra de informação, os problemas 'P' são a chave para a sobrevivência. Eles são aqueles que a Corporação usa para processar dados de forma eficiente e em tempo real. O que caracteriza um problema como pertencente à Classe P?",
+        "options": [
+          "Problemas tão complexos que são impossíveis de resolver, nem mesmo pela IA.",
+          "Problemas que exigem um tempo exponencial de processamento.",
+          "Problemas que podem ser resolvidos por um algoritmo determinístico em tempo polinomial.",
+          "Problemas que só podem ser resolvidos em computadores quânticos."
+        ],
+        "answer": "Problemas que podem ser resolvidos por um algoritmo determinístico em tempo polinomial.",
+        "oracle_hint": "O 'P' aqui não é de 'Poder', mas de 'Polinomial'. Pense na velocidade e eficiência de um cálculo rápido e escalável.",
+        "explanation": "A Classe P (do inglês Polynomial Time) agrupa problemas que conseguimos resolver rapidamente. Um tempo polinomial (O(n^k)) é o padrão de eficiência na teoria da complexidade, significando que o tempo de resolução cresce de forma controlada com o tamanho da entrada."
+      },
+      {
+        "question": "O submundo da criptografia lida com os problemas 'NP': encontrar a solução é uma agonia, mas o Oráculo pode validar um palpite em um piscar de olhos. O que define a Classe NP (Nondeterministic Polynomial Time)?",
+        "options": [
+          "Problemas que não possuem solução conhecida (Não-Polinomial).",
+          "Problemas cuja solução, se fornecida, pode ser verificada rapidamente (em tempo polinomial).",
+          "Problemas que podem ser resolvidos por uma Máquina de Turing não-determinística em tempo exponencial.",
+          "Problemas mais fáceis de resolver do que aqueles na Classe P."
+        ],
+        "answer": "Problemas cuja solução, se fornecida, pode ser verificada rapidamente (em tempo polinomial).",
+        "oracle_hint": "Não é sobre a velocidade de encontrar a chave, mas sim a velocidade de conferir se a chave que você achou está correta.",
+        "explanation": "NP significa que, mesmo que encontrar a resposta seja demorado, podemos verificar se uma solução proposta está correta em tempo polinomial. A grande questão (P vs NP) é se, no fundo, todo problema rápido de verificar é também rápido de resolver."
+      },
+      {
+        "question": "Um perigoso replicante precisa encontrar a rota mais curta que visita todas as 15 zonas de exclusão da cidade. Ele enfrenta o arquétipo da dificuldade: o 'Vendedor Viajante' (TSP). Este é o exemplo mais famoso de um problema na fronteira da dificuldade. A qual classe ele pertence?",
+        "options": [
+          "NP-Completo (NP-C): a chave mestra que, se resolvida rápido, resolve todos os outros problemas NP.",
+          "Classe P: um problema fácil de resolver, como ordenar uma lista de mercadorias, sendo a classificação ideal.",
+          "Indecidível: não há solução algorítmica possível, ele rodará para sempre.",
+          "Algoritmo de Criptografia Rápida (ACR)."
+        ],
+        "answer": "NP-Completo (NP-C): a chave mestra que, se resolvida rápido, resolve todos os outros problemas NP.",
+        "oracle_hint": "Encontrar o caminho mais curto entre várias cidades é o clássico problema que define a dificuldade máxima dentro da Classe NP.",
+        "explanation": "O Problema do Caixeiro Viajante é NP-completo (NP-C). Isso significa que é um dos problemas mais difíceis na classe NP. Se um dia encontrarmos uma forma eficiente (polinomial) de resolvê-lo, poderemos resolver todos os problemas em NP rapidamente, provando que P = NP."
+      },
+      {
+        "question": "O armazenamento tático da Máquina de Turing é essencial para qualquer operação de hack bem-sucedida. Se a Máquina de Turing é o modelo, qual parte conceitual dela serve como seu mecanismo de memória (para armazenar tanto dados quanto as instruções do programa)?",
+        "options": [
+          "O Cabeçote de leitura e escrita, que processa a informação.",
+          "A Fita (Tape), uma sequência infinita para símbolos e código.",
+          "O Controlador Finito, que define as regras de transição.",
+          "A Unidade Lógica Aritmética (ULA), do processador."
+        ],
+        "answer": "A Fita (Tape), uma sequência infinita para símbolos e código.",
+        "oracle_hint": "Imagine um pergaminho que nunca acaba, onde o agente pode gravar e apagar todos os dados e o script do hack.",
+        "explanation": "A Fita da MT é conceitualmente sua memória e entrada/saída. Ela armazena os símbolos que representam tanto a entrada, o estado intermediário e a saída da computação, seguindo o modelo de fita de um computador antigo."
+      },
+      {
+        "question": "Um programa de IA de reconhecimento de voz falha ao tentar resolver a questão 'este código vai travar em loop?'. No entanto, a teoria garante que certos problemas de decisão sempre terão uma resposta por um algoritmo em tempo finito. Esses são os problemas:",
+        "options": [
+          "Indecidíveis, pois desafiam a lógica.",
+          "Considerados 'Não-Polinomiais' (NP), pois os algoritmos serão semi decisivos.",
+          "Decidíveis: sempre terão solução encontrada por um algoritmo.",
+          "Intratáveis, por exigirem tempo exponencial."
+        ],
+        "answer": "Decidíveis: sempre terão solução encontrada por um algoritmo.",
+        "oracle_hint": "Decidível não significa rápido, mas sim que a resposta (SIM ou NÃO, ou um resultado) é garantida de ser encontrada pelo computador, sem travar.",
+        "explanation": "Um problema decidível é aquele para o qual existe um algoritmo (uma Máquina de Turing) que consegue resolvê-lo em um número finito de passos para qualquer entrada. Seu oposto é o indecidível, como o Problema da Parada."
+      },
+      {
+        "question": "A Corporação usa algoritmos que demonstram alta eficiência e escalabilidade, garantindo que o tempo de processamento não exploda quando os dados aumentam. Esse crescimento de tempo controlado é definido por qual conceito?",
+        "options": [
+          "Complexidade Fatorial (e.g., O(n!)).",
+          "Tempo Exponencial (e.g., O(2^n)).",
+          "Tempo Polinomial (e.g., O(n^3)).",
+          "Tempo Logarítmico (e.g., O(log n))."
+        ],
+        "answer": "Tempo Polinomial (e.g., O(n^3)).",
+        "oracle_hint": "Pense no O(n^k). É rápido o suficiente para ser prático, mesmo que a entrada seja grande.",
+        "explanation": "Tempo polinomial indica eficiência (O(n^k)). Problemas em P são considerados 'tratáveis' porque o tempo que levam para serem resolvidos cresce de forma muito mais lenta e controlada do que o tempo exponencial (O(2^n)), que rapidamente se torna impraticável."
+      },
+      {
+        "question": "Você rouba um manual de criptografia onde se lê: 'Se for rápido de resolver (P), é trivialmente rápido de verificar (NP).' Isso significa que P é o quê de NP?",
+        "options": [
+          "Totalmente separado de NP.",
+          "Idêntico a NP (P = NP).",
+          "Um subconjunto de NP (P ⊆ NP).",
+          "Apenas o conjunto de problemas indecidíveis."
+        ],
+        "answer": "Um subconjunto de NP (P ⊆ NP).",
+        "oracle_hint": "Qualquer problema que pode ser resolvido de forma eficiente também pode ter sua solução verificada de forma eficiente.",
+        "explanation": "Se um problema pode ser resolvido em tempo polinomial (P), a solução encontrada pode ser verificada simplesmente reexecutando o algoritmo de solução. Portanto, P é um subconjunto de NP (P ⊆ NP). A grande questão é se P é um subconjunto estrito ou se P = NP."
+      },
+      {
+        "question": "Para otimizar a distribuição de recursos roubados no Underground, você precisa de um algoritmo que ordene a lista de suprimentos de forma ultrarrápida. Encontrar a Ordenação de uma lista de dados (Sort) pertence à classe de problemas considerada a mais eficiente, que é:",
+        "options": [
+          "Indecidível, por ser muito complexo.",
+          "NP-Completo, pela dificuldade na verificação.",
+          "A Classe P, pelo seu crescimento controlado.",
+          "A Classe NP-Difícil, pela necessidade de força bruta."
+        ],
+        "answer": "A Classe P, pelo seu crescimento controlado.",
+        "oracle_hint": "Pense no que seu computador faz de forma rotineira e rápida.",
+        "explanation": "A Ordenação de uma lista é um exemplo clássico de problema em P, pois algoritmos eficientes como Mergesort ou Quicksort o resolvem em tempo O(n log n), que é considerado tempo polinomial e, portanto, eficiente."
+      },
+      {
+        "question": "O seu sistema detecta que o protocolo de comunicação da Corporação se baseia em um problema difícil de quebrar. No entanto, se você tivesse a chave (a solução), a validação dessa chave seria instantânea. Essa característica de verificação rápida define a classe:",
+        "options": [
+          "P (Problemas Polinomiais).",
+          "NP (Nondeterministic Polynomial).",
+          "Indecidível.",
+          "Exponencial."
+        ],
+        "answer": "NP (Nondeterministic Polynomial).",
+        "oracle_hint": "A diferença é entre o esforço de criar uma chave mestra e o esforço de testar se a chave que te deram abre a porta.",
+        "explanation": "A característica principal de NP é que, mesmo que encontrar a resposta (a 'chave') seja um processo demorado, o processo de verificação dessa resposta ('testar a chave') é rápido, levando um tempo polinomial."
+      },
+      {
+        "question": "Qual é a figura histórica, fundamental na teoria da computação e na criptografia da Segunda Guerra, que é considerado o arquiteto intelectual por trás do modelo da Máquina de Turing?",
+        "options": [
+          "Isaac Newton, o físico da gravidade.",
+          "Alan Turing, o pai da ciência da computação.",
+          "Albert Einstein, o teórico da relatividade.",
+          "Bill Gates, o empresário da tecnologia."
+        ],
+        "answer": "Alan Turing, o pai da ciência da computação.",
+        "oracle_hint": "Procure pelo matemático que, além da Máquina, deu nome a um famoso teste de inteligência artificial.",
+        "explanation": "Alan Turing é amplamente considerado o pai da ciência da computação teórica e da inteligência artificial. Seus trabalhos sobre decidibilidade, a MT e o Teste de Turing são fundamentais."
+      },
+      {
+        "question": "Você precisa otimizar um daemon de hack e decide medir o custo de operação dele. A medida teórica que contabiliza o número de passos que o algoritmo executa em função do tamanho da entrada é chamada de:",
+        "options": [
+          "Complexidade de Espaço (memória).",
+          "Complexidade de Tempo (passos/operações).",
+          "Complexidade Fatorial (custo n!).",
+          "Latência de Rede (atraso de comunicação)."
+        ],
+        "answer": "Complexidade de Tempo (passos/operações).",
+        "oracle_hint": "É uma contagem teórica de 'passos' do computador, não o tempo cronometrado no relógio.",
+        "explanation": "A complexidade de tempo (O(·)) é uma medida do número de passos elementares (operações) que um algoritmo executa. Ela descreve como o tempo de execução cresce à medida que o tamanho da entrada (n) aumenta."
+      },
+      {
+        "question": "Se o seu hacker encontrasse um algoritmo de tempo polinomial para resolver o Caixeiro Viajante (TSP), o que isso provaria, encerrando a maior questão da ciência da computação?",
+        "options": [
+          "Que o TSP é um problema indecidível por não existir um algoritmo capaz de resolver.",
+          "Que P = NP: todo problema rápido de verificar também é rápido de resolver.",
+          "Que a Máquina de Turing é obsoleta.",
+          "Que a computação quântica é a única solução para esse tipo de problema, pois considera estados de superposição."
+        ],
+        "answer": "Que P = NP: todo problema rápido de verificar também é rápido de resolver.",
+        "oracle_hint": "O TSP é NP-Completo. Resolver um NP-C rapidamente é a chave para a prova de P = NP.",
+        "explanation": "O TSP é um problema NP-Completo. Se um algoritmo polinomial for encontrado para um NP-Completo, ele pode ser usado para resolver todos os problemas em NP rapidamente, provando que P = NP."
+      },
+      {
+        "question": "O Firewall de Neo-Tóquio usa um problema que, se resolvido rapidamente, faria todos os problemas NP virarem fáceis. Qual classe de problemas representa este ponto de inflexão máximo da dificuldade em NP?",
+        "options": [
+          "Classe P.",
+          "Classe NP-Difícil (NP-D).",
+          "Classe NP-Completo (NP-C).",
+          "Problemas Indecidíveis."
+        ],
+        "answer": "Classe NP-Completo (NP-C).",
+        "oracle_hint": "Eles são os mais difíceis de NP, a chave mestra que desbloqueia a resolução de todos os outros.",
+        "explanation": "Os problemas NP-Completos (NP-C) são o subconjunto de NP que é ao mesmo tempo em NP e NP-difícil. Eles são o 'mais difícil' dentro de NP. Se um algoritmo polinomial for encontrado para um NP-Completo, ele pode ser usado para resolver todos os problemas em NP rapidamente, provando P=NP."
+      },
+      {
+        "question": "A Máquina de Turing Universal é a joia da coroa da teoria de Alan Turing. Qual a sua importância conceitual no mundo da computação, sendo o modelo de 'máquina que faz tudo'?",
+        "options": [
+          "Ela é um modelo que só pode resolver equações matemáticas e simular alguns sistema de computador.",
+          "Ela é o modelo de hardware mais eficiente já construído, capaz de resolver problemas quânticos.",
+          "Ela prova que um único computador pode simular qualquer outro programa ou computador.",
+          "Ela é um algoritmo de criptografia inquebrável."
+        ],
+        "answer": "Ela prova que um único computador pode simular qualquer outro programa ou computador.",
+        "oracle_hint": "Pense nela como o conceito por trás de um computador que pode rodar qualquer aplicativo.",
+        "explanation": "A Máquina de Turing Universal (MTU) é um modelo de Máquina de Turing que, dado o código de outra Máquina de Turing, consegue simular seu comportamento. Ela é o modelo teórico de um computador de 'propósito geral' e é o conceito por trás dos computadores modernos programáveis."
+      },
+      {
+        "question": "Um vírus de IA foi projetado para hackear a mente humana, mas trava ao tentar prever se um código de hack malicioso vai terminar de rodar ou travar em um loop infinito. Esse é o problema clássico que prova o limite da computação:",
+        "options": [
+          "O Problema da Soma de Subconjuntos.",
+          "O Problema do Caixeiro Viajante (TSP).",
+          "O Problema da Satisfatibilidade Booleana (SAT).",
+          "O Problema da Parada (Halting Problem)."
+        ],
+        "answer": "O Problema da Parada (Halting Problem).",
+        "oracle_hint": "É a clássica prova de que nem todas as perguntas podem ser respondidas por um computador. O computador não pode prever se outro vai 'parar'.",
+        "explanation": "O Problema da Parada é o exemplo mais famoso de problema indecidível. Alan Turing provou que não existe um algoritmo geral que consiga determinar, para qualquer programa e entrada, se esse programa irá eventualmente parar ou rodar infinitamente."
+      },
+      {
+        "question": "Se um algoritmo de IA pode resolver um problema em tempo polinomial, automaticamente ele está na classe P. Essa classe P é o conjunto dos problemas que são, simultaneamente, eficientes para resolver e eficientes para:",
+        "options": [
+          "Serem indecidíveis.",
+          "Serem resolvidos em tempo exponencial.",
+          "Serem verificados.",
+          "Serem reduzidos a um problema NP-Difícil."
+        ],
+        "answer": "Serem verificados.",
+        "oracle_hint": "Se consigo resolver rápido, também consigo verificar rápido.",
+        "explanation": "A classe P contém problemas que podem ser resolvidos em tempo polinomial. Como a resolução polinomial implica automaticamente a verificação polinomial, P é o conjunto de problemas que são eficientes em ambas as dimensões."
+      },
+      {
+        "question": "O cabeçote de leitura/escrita na Máquina de Turing age como o 'braço robótico' que interage com a memória. Sua função primária, em analogia a um processador simples, é:",
+        "options": [
+          "Gerar números aleatórios para criptografia considerando SHA256 e compactação de arquivos.",
+          "Mover-se na fita para ler o símbolo atual e reescrever de acordo com o estado da máquina.",
+          "Conectar a MT com outras máquinas na rede para ter uma fita de memória ainda mais robusta.",
+          "Executar apenas operações lógicas OR e AND."
+        ],
+        "answer": "Mover-se na fita para ler o símbolo atual e reescrever de acordo com o estado da máquina.",
+        "oracle_hint": "É o braço robótico que interage com a memória da máquina (a fita).",
+        "explanation": "O cabeçote é o componente que interage com a fita. Ele lê o símbolo na posição atual, considera o estado interno da máquina, escreve um novo símbolo, e então se move para a esquerda ou direita, mudando para um novo estado interno."
+      }
     ],
     "medium_questions": [
-        {
-            "question": "Você confronta um hacker rival sobre a diferença entre as classes P e NP. A diferença crucial de eficiência reside no fato de que P é sobre resolução rápida, enquanto NP é, fundamentalmente, sobre:",
-            "options": [
-                "Não ter solução conhecida.",
-                "Apenas a verificação rápida da solução, se fornecida.",
-                "A exclusividade de problemas indecidíveis.",
-                "A utilização de algoritmos apenas não-determinísticos."
-            ],
-            "answer": "Apenas a verificação rápida da solução, se fornecida.",
-            "oracle_hint": "Pensa em resolver uma equação versus apenas checar se uma solução já proposta é correta.",
-            "explanation": "Problemas em P podem ser resolvidos em tempo polinomial (eficientemente), enquanto a definição da classe NP exige apenas que a verificação de uma solução possa ser feita em tempo polinomial. O tempo de resolução de um NP (fora de P) pode ser exponencial."
-        },
-        {
-            "question": "Um algoritmo tenta resolver um sistema lógico complexo chamado Problema da Satisfatibilidade Booleana (SAT), que exige encontrar valores de verdade para uma fórmula. Esse problema é o marco inicial da dificuldade, sendo o primeiro a ser provado como:",
-            "options": [
-                "P, pois tem solução simples.",
-                "NP-Completo, a chave mestra que, se resolvida, resolve todos os outros problemas NP.",
-                "Indecidível, por não ter solução algorítmica.",
-                "Logarítmico, por ser muito rápido."
-            ],
-            "answer": "NP-Completo, a chave mestra que, se resolvida, resolve todos os outros problemas NP.",
-            "oracle_hint": "Esse problema foi o primeiro a ser provado NP-completo, servindo de base para outros (Teorema de Cook-Levin).",
-            "explanation": "O problema SAT foi o primeiro problema provado NP-completo por Stephen Cook em 1971. Sua importância é que ele serve como o 'modelo' de dificuldade, e muitos outros problemas NP-Completos são provados através de redução a ele."
-        },
-        {
-            "question": "O seu sistema de hack conseguiu um feito monumental: encontrou um algoritmo para resolver um problema NP-completo em tempo polinomial. Qual a principal implicação dessa descoberta para a hierarquia de complexidade?",
-            "options": [
-                "Apenas o problema resolvido se torna fácil, sem afetar os outros.",
-                "Todos os problemas indecidíveis se tornam decidíveis.",
-                "A prova de que P = NP; todos os problemas em NP passam a ser resolúveis em tempo polinomial.",
-                "Essa prova não tem impacto na teoria da computação."
-            ],
-            "answer": "A prova de que P = NP; todos os problemas em NP passam a ser resolúveis em tempo polinomial.",
-            "oracle_hint": "Lembre-se: resolver o mais difícil resolve todos os mais fáceis. NP-C é o 'chefe' de NP.",
-            "explanation": "Se um problema NP-completo pode ser resolvido em tempo polinomial, isso significa que P = NP. Como todos os outros problemas em NP podem ser reduzidos a ele, um algoritmo rápido para o NP-completo implica um algoritmo rápido para todos os problemas em NP."
-        },
-        {
-            "question": "A versão do Caixeiro Viajante (TSP) que pergunta: 'Qual é o caminho mais curto exato?' (Otimização) é considerada mais difícil do que a versão de decisão ('Existe um caminho menor que X?'). Essa versão de otimização é tipicamente classificada como:",
-            "options": [
-                "Um problema em P.",
-                "Um problema NP-Completo.",
-                "Um problema NP-Difícil (sendo a versão de otimização, mais complexa que a de decisão).",
-                "Um problema Indecidível."
-            ],
-            "answer": "Um problema NP-Difícil (sendo a versão de otimização, mais complexa que a de decisão).",
-            "oracle_hint": "A versão que pede o menor caminho exato é ainda mais complicada do que só decidir se existe um caminho, sendo um dos problemas mais difíceis.",
-            "explanation": "Problemas NP-difíceis são aqueles que são pelo menos tão difíceis quanto os problemas NP-completos. O Caixeiro Viajante na versão de otimização (encontrar o menor caminho) é NP-Difícil, enquanto a versão de decisão (verificar se existe um caminho com custo ≤ k) é NP-Completo."
-        },
-        {
-            "question": "Para provar que um novo protocolo de criptografia tem a mesma dificuldade de um problema NP-completo conhecido, você deve usar o método de transformação eficiente de um problema em outro. Isso é chamado de:",
-            "options": [
-                "Indecidibilidade da Máquina de Turing.",
-                "Busca Binária Otimizada.",
-                "Complexidade Exponencial.",
-                "Redução Polinomial (transformar um problema no outro de forma eficiente)."
-            ],
-            "answer": "Redução Polinomial (transformar um problema no outro de forma eficiente).",
-            "oracle_hint": "É como traduzir a dificuldade de um problema para outro, provando que a complexidade é a mesma.",
-            "explanation": "Uma redução polinomial é um algoritmo que transforma uma instância de um problema em uma instância de outro problema em tempo polinomial. Se um NP-completo pode ser reduzido a um novo problema, isso prova que o novo problema é pelo menos NP-difícil."
-        },
-        {
-            "question": "Por que o Problema da Parada é tão importante na teoria da computação? O que ele prova sobre os limites dos computadores (e das IAs)?",
-            "options": [
-                "Ele prova que todos os problemas em NP podem ser resolvidos.",
-                "Ele demonstra que existem limites intransponíveis para o que pode ser computado por qualquer máquina (problemas indecidíveis).",
-                "Ele é um problema em P.",
-                "Ele resolve a questão P vs NP."
-            ],
-            "answer": "Ele demonstra que existem limites intransponíveis para o que pode ser computado por qualquer máquina (problemas indecidíveis).",
-            "oracle_hint": "Mostra que há perguntas que nenhuma máquina consegue responder com certeza.",
-            "explanation": "A indecidibilidade do Problema da Parada mostra que o domínio da computação algorítmica não é infinito: existem questões que são matematicamente impossíveis de serem resolvidas por um algoritmo de propósito geral em tempo finito, definindo um limite teórico."
-        },
-        {
-            "question": "O seu drone usa um algoritmo de Busca Binária para localizar alvos, que corta o espaço de busca pela metade em cada passo. Na notação Big O, essa eficiência é representada como:",
-            "options": [
-                "O(1).",
-                "O(n).",
-                "O(log n).",
-                "O(n log n)."
-            ],
-            "answer": "O(log n).",
-            "oracle_hint": "A cada passo, o algoritmo corta o espaço de busca pela metade.",
-            "explanation": "A complexidade de tempo O(log n) (Tempo Logarítmico) é típica de algoritmos que empregam a estratégia 'dividir para conquistar' ou que sistematicamente reduzem o espaço de busca, como a busca binária. É extremamente eficiente."
-        },
-        {
-            "question": "Você explica para um novato que a classe NP-Completo (NP-C) não é a mesma que NP. Qual a distinção fundamental entre o conjunto maior (NP) e o subconjunto (NP-C)?",
-            "options": [
-                "NP-C é mais restrito, contendo apenas problemas que podem ser reduzidos a um problema em P.",
-                "NP-C é o subconjunto de NP que contém os problemas mais difíceis (aqueles que são também NP-difíceis).",
-                "Todo NP é NP-C.",
-                "NP-C contém problemas que são apenas verificáveis, e NP contém problemas resolvidos em tempo polinomial."
-            ],
-            "answer": "NP-C é o subconjunto de NP que contém os problemas mais difíceis (aqueles que são também NP-difíceis).",
-            "oracle_hint": "Pensa em NP como uma biblioteca e NP-completo como as estantes com os livros mais pesados.",
-            "explanation": "A classe NP-Completo é o subconjunto de NP que define a fronteira máxima da dificuldade em NP. Eles são os problemas mais representativos, pois se um deles for resolvido eficientemente, todos os problemas em NP podem ser resolvidos eficientemente."
-        },
-        {
-            "question": "Em qual teorema fundamental foi provado que o Problema da Satisfatibilidade Booleana (SAT) é a 'chave' (o primeiro NP-Completo), estabelecendo o conceito de redução polinomial?",
-            "options": [
-                "Teorema da Incompletude de Gödel.",
-                "O Teorema de Cook (ou Cook-Levin).",
-                "Tese de Church-Turing.",
-                "Lei de Moore."
-            ],
-            "answer": "O Teorema de Cook (ou Cook-Levin).",
-            "oracle_hint": "A prova fundamental que define a classe NP-C tem o nome deste cientista e data de 1971.",
-            "explanation": "Stephen Cook formalizou a classe de problemas NP-completo e provou que SAT é o primeiro, no seu famoso Teorema de Cook (Teorema de Cook-Levin, juntamente com Levin, que o demonstrou independentemente)."
-        },
-        {
-            "question": "Um problema é indecidível quando não há um algoritmo geral que sempre encontre uma resposta. Um problema intratável (como o Caixeiro Viajante) é, por outro lado:",
-            "options": [
-                "Um problema fácil que pode ser resolvido em tempo constante.",
-                "Um problema que, embora solucionável, exige um tempo de processamento impraticável (exponencial).",
-                "Um problema que só pode ser resolvido por IAs.",
-                "Um problema sem solução teórica."
-            ],
-            "answer": "Um problema que, embora solucionável, exige um tempo de processamento impraticável (exponencial).",
-            "oracle_hint": "Um é impossível de resolver, o outro é possível, mas demora muito.",
-            "explanation": "Problemas indecidíveis não têm um algoritmo que sempre forneça uma resposta. Problemas intratáveis (como os NP-Completos se P ≠ NP) são decidíveis, mas seu algoritmo mais rápido exige um tempo exponencial, tornando-o impraticável para entradas grandes."
-        },
-        {
-            "question": "Um algoritmo de IA usa a estratégia 'dividir para conquistar' para ordenar dados com complexidade O(n log n). Qual algoritmo de ordenação famoso tem essa complexidade no pior caso?",
-            "options": [
-                "Bubble Sort (O(n^2)).",
-                "Insertion Sort (O(n^2)).",
-                "Mergesort (O(n log n)).",
-                "Quicksort (O(n^2) no pior caso)."
-            ],
-            "answer": "Mergesort (O(n log n)).",
-            "oracle_hint": "Esse algoritmo divide para conquistar, juntando as partes ordenadas no final, mantendo a eficiência.",
-            "explanation": "O Mergesort tem complexidade de tempo O(n log n) em todos os casos (melhor, médio e pior), o que o torna um dos algoritmos de ordenação mais eficientes e estáveis."
-        },
-        {
-            "question": "O problema de otimização de redes de IA, chamado Problema da Clique Máxima (encontrar o maior subgrafo totalmente conectado), é um desafio na teoria de grafos. A qual classe de complexidade ele pertence?",
-            "options": [
-                "P, pois é um problema fácil de grafos.",
-                "É NP-completo, sendo um dos problemas de grafos mais difíceis.",
-                "É Indecidível.",
-                "Tem complexidade O(n log n)."
-            ],
-            "answer": "É NP-completo, sendo um dos problemas de grafos mais difíceis.",
-            "oracle_hint": "É um dos clássicos problemas de grafos difíceis, usado para reduzir outros problemas.",
-            "explanation": "O Problema da Clique Máxima é classicamente NP-completo. Encontrar a clique (o subgrafo completo) de maior tamanho é um desafio que, no pior caso, exige uma busca exponencial."
-        },
-        {
-            "question": "Ao tentar resolver o Caixeiro Viajante (TSP) com 20 cidades, o hacker percebe que testar todas as rotas levará anos. Isso ocorre porque o algoritmo de força bruta tem complexidade:",
-            "options": [
-                "Tempo Linear (O(n)).",
-                "Tempo Quadrático (O(n^2)).",
-                "Tempo Fatorial (O(n!)).",
-                "Tempo Exponencial de Base 2 (O(2^n))."
-            ],
-            "answer": "Tempo Fatorial (O(n!)).",
-            "oracle_hint": "Esse método testa todas as possíveis ordens de cidades.",
-            "explanation": "Resolver o TSP por força bruta exige testar todas as permutações de cidades. O número de permutações de n cidades é n! (n fatorial), o que cresce incrivelmente rápido e é considerado intratável."
-        },
-        {
-            "question": "O seu sistema de detecção de invasão usa um algoritmo que sempre gera o mesmo resultado para a mesma sequência de dados de entrada. Esse algoritmo é conhecido como:",
-            "options": [
-                "Não-Determinístico.",
-                "Determinístico.",
-                "Probabilístico.",
-                "Caótico."
-            ],
-            "answer": "Determinístico.",
-            "oracle_hint": "É previsível: entrada igual, saída igual.",
-            "explanation": "Um algoritmo determinístico é aquele que sempre segue a mesma sequência de passos e produz a mesma saída para a mesma entrada, operando de forma previsível e sem aleatoriedade."
-        },
-        {
-            "question": "O Quicksort é popular por sua velocidade, mas pode desacelerar drasticamente se o pivô for sempre mal escolhido. Qual a complexidade de tempo do Quicksort no pior caso?",
-            "options": [
-                "O(n).",
-                "O(n log n).",
-                "O(n^2).",
-                "O(2^n)."
-            ],
-            "answer": "O(n^2).",
-            "oracle_hint": "Quando o pivô é sempre o pior possível, ele acaba se aproximando da força bruta.",
-            "explanation": "O Quicksort tem complexidade média O(n log n), mas no pior caso, onde a escolha do pivô é sempre a menos ideal, ele degenera para uma complexidade quadrática (O(n^2))."
-        },
-        {
-            "question": "A principal missão da Teoria da Complexidade na guerra de informação é identificar a fronteira entre o que é 'fácil' e o que é 'difícil' na computação. Qual seu foco principal?",
-            "options": [
-                "Construir computadores mais rápidos.",
-                "A classificação de problemas de acordo com os recursos (tempo e espaço) necessários para resolvê-los.",
-                "Criar novos sistemas operacionais.",
-                "Desenvolver linguagens de programação."
-            ],
-            "answer": "A classificação de problemas de acordo com os recursos (tempo e espaço) necessários para resolvê-los.",
-            "oracle_hint": "É como organizar problemas em caixinhas: fáceis (P), difíceis (NP-C) ou impossíveis (Indecidíveis).",
-            "explanation": "A teoria da complexidade classifica problemas computacionais em termos de recursos necessários (tempo, memória). Ela busca entender por que alguns problemas são intrinsecamente mais difíceis do que outros."
-        },
-        {
-            "question": "Na complexidade de tempo, qual tipo de crescimento de tempo é considerado eficiente (tratável) versus aquele que é impraticável (intratável)?",
-            "options": [
-                "Polinomial é impraticável; Exponencial é eficiente.",
-                "Logarítmico é impraticável; Polinomial é eficiente.",
-                "Polinomial (e.g., n^2) é eficiente; Exponencial (e.g., 2^n) é impraticável.",
-                "Fatorial é eficiente; Constante é impraticável."
-            ],
-            "answer": "Polinomial (e.g., n^2) é eficiente; Exponencial (e.g., 2^n) é impraticável.",
-            "oracle_hint": "Um cresce como n², o outro como 2^n. O segundo explode.",
-            "explanation": "Tempo polinomial é considerado eficiente porque cresce devagar e de forma controlada, enquanto exponencial cresce muito rápido e se torna impraticável para grandes entradas, caracterizando a intratabilidade."
-        },
-        {
-            "question": "Qual a principal diferença entre um problema NP-Completo e um problema NP-Difícil?",
-            "options": [
-                "NP-C é mais difícil do que NP-Difícil.",
-                "NP-Difícil são problemas fáceis que não estão em P.",
-                "NP-Difícil são aqueles que são pelo menos tão difíceis quanto os NP-C, mas não estão necessariamente na classe NP.",
-                "NP-C são problemas indecidíveis."
-            ],
-            "answer": "NP-Difícil são aqueles que são pelo menos tão difíceis quanto os NP-C, mas não estão necessariamente na classe NP.",
-            "oracle_hint": "O termo 'NP-Difícil' significa pelo menos tão difícil quanto NP-C. Um problema NP-Difícil pode ser até indecidível, mas o NP-C precisa ser decidível (estar em NP).",
-            "explanation": "NP-difíceis são pelo menos tão difíceis quanto os NP-completos, podendo até ser indecidíveis. A diferença é que os NP-Completos devem ser, por definição, problemas de decisão que pertencem à classe NP. Os NP-Difíceis não têm essa restrição, permitindo incluir problemas de otimização."
-        },
-        {
-            "question": "A questão P vs NP é crucial para a segurança de toda a rede de Neo-Cyberia. Qual seria a principal consequência prática se a prova de que P = NP fosse revelada?",
-            "options": [
-                "A IA seria capaz de resolver o Problema da Parada.",
-                "A segurança da criptografia de chave pública seria totalmente quebrada.",
-                "Os computadores quânticos se tornariam obsoletos.",
-                "Todos os problemas indecidíveis se tornariam tratáveis."
-            ],
-            "answer": "A segurança da criptografia de chave pública seria totalmente quebrada.",
-            "oracle_hint": "A criptografia digital se baseia na dificuldade em resolver problemas NP-Difíceis. Se eles fossem fáceis de resolver, a criptografia não funcionaria.",
-            "explanation": "Saber se P = NP tem impacto em segurança, criptografia, inteligência artificial e otimização. A maioria dos sistemas de criptografia utiliza a dificuldade (intratabilidade) de problemas NP-Difíceis/NP-Completos como pilar de segurança. Se P=NP, esses problemas seriam facilmente resolvidos, quebrando esses sistemas."
-        }
+      {
+        "question": "Você confronta um hacker rival sobre a diferença entre as classes P e NP. A diferença crucial de eficiência reside no fato de que P é sobre resolução rápida, enquanto NP é, fundamentalmente, sobre:",
+        "options": [
+          "Não ter solução conhecida.",
+          "Apenas a verificação rápida da solução, se fornecida.",
+          "A exclusividade de problemas indecidíveis.",
+          "A utilização de algoritmos apenas não-determinísticos."
+        ],
+        "answer": "Apenas a verificação rápida da solução, se fornecida.",
+        "oracle_hint": "Pensa em resolver uma equação versus apenas checar se uma solução já proposta é correta.",
+        "explanation": "Problemas em P podem ser resolvidos em tempo polinomial (eficientemente), enquanto a definição da classe NP exige apenas que a verificação de uma solução possa ser feita em tempo polinomial. O tempo de resolução de um NP (fora de P) pode ser exponencial."
+      },
+      {
+        "question": "Um algoritmo tenta resolver um sistema lógico complexo chamado Problema da Satisfatibilidade Booleana (SAT), que exige encontrar valores de verdade para uma fórmula. Esse problema é o marco inicial da dificuldade, sendo o primeiro a ser provado como:",
+        "options": [
+          "P, pois tem solução simples em tempo polinomial.",
+          "NP-Completo, pois se resolvida resolve todos os outros problemas NP.",
+          "Indecidível, por não ter solução algorítmica capaz de atender problemas NP.",
+          "Logarítmico, por ser muito rápido."
+        ],
+        "answer": "NP-Completo, pois se resolvida resolve todos os outros problemas NP.",
+        "oracle_hint": "Esse problema foi o primeiro a ser provado NP-completo, servindo de base para outros (Teorema de Cook-Levin).",
+        "explanation": "O problema SAT foi o primeiro problema provado NP-completo por Stephen Cook em 1971. Sua importância é que ele serve como o 'modelo' de dificuldade, e muitos outros problemas NP-Completos são provados através de redução a ele."
+      },
+      {
+        "question": "O seu sistema de hack conseguiu um feito monumental: encontrou um algoritmo para resolver um problema NP-completo em tempo polinomial. Qual a principal implicação dessa descoberta para a hierarquia de complexidade?",
+        "options": [
+          "Apenas o problema resolvido se torna fácil, sem afetar os outros.",
+          "Todos os problemas indecidíveis se tornam decidíveis.",
+          "A prova de que P = NP.",
+          "Essa prova não tem impacto na teoria da computação."
+        ],
+        "answer": "A prova de que P = NP.",
+        "oracle_hint": "Lembre-se: resolver o mais difícil resolve todos os mais fáceis. NP-C é o 'chefe' de NP.",
+        "explanation": "Se um problema NP-completo pode ser resolvido em tempo polinomial, isso significa que P = NP. Como todos os outros problemas em NP podem ser reduzidos a ele, um algoritmo rápido para o NP-completo implica um algoritmo rápido para todos os problemas em NP."
+      },
+      {
+        "question": "A versão do Caixeiro Viajante (TSP) que pergunta: 'Qual é o caminho mais curto exato?' (Otimização) é considerada mais difícil do que a versão de decisão ('Existe um caminho menor que X?'). Essa versão de otimização é tipicamente classificada como:",
+        "options": [
+          "Um problema em P.",
+          "Um problema NP-Completo.",
+          "Um problema NP-Difícil.",
+          "Um problema Indecidível."
+        ],
+        "answer": "Um problema NP-Difícil.",
+        "oracle_hint": "A versão que pede o menor caminho exato é ainda mais complicada do que só decidir se existe um caminho, sendo um dos problemas mais difíceis.",
+        "explanation": "Problemas NP-difíceis são aqueles que são pelo menos tão difíceis quanto os problemas NP-completos. O Caixeiro Viajante na versão de otimização (encontrar o menor caminho) é NP-Difícil, enquanto a versão de decisão (verificar se existe um caminho com custo ≤ k) é NP-Completo."
+      },
+      {
+        "question": "Para provar que um novo protocolo de criptografia tem a mesma dificuldade de um problema NP-completo conhecido, você deve usar o método de transformação eficiente de um problema em outro. Isso é chamado de:",
+        "options": [
+          "Indecidibilidade da Máquina de Turing.",
+          "Busca Binária Otimizada.",
+          "Complexidade Exponencial.",
+          "Redução Polinomial."
+        ],
+        "answer": "Redução Polinomial.",
+        "oracle_hint": "É como traduzir a dificuldade de um problema para outro, provando que a complexidade é a mesma.",
+        "explanation": "Uma redução polinomial é um algoritmo que transforma uma instância de um problema em uma instância de outro problema em tempo polinomial. Se um NP-completo pode ser reduzido a um novo problema, isso prova que o novo problema é pelo menos NP-difícil."
+      },
+      {
+        "question": "Por que o Problema da Parada é tão importante na teoria da computação? O que ele prova sobre os limites dos computadores (e das IAs)?",
+        "options": [
+          "Ele prova que todos os problemas em NP podem ser resolvidos.",
+          "Ele demonstra que existem limites para a computação.",
+          "Ele é um problema em P que revolucionou o processamento da computação.",
+          "Ele resolve a questão P vs NP."
+        ],
+        "answer": "Ele demonstra que existem limites para a computação.",
+        "oracle_hint": "Mostra que há perguntas que nenhuma máquina consegue responder com certeza.",
+        "explanation": "A indecidibilidade do Problema da Parada mostra que o domínio da computação algorítmica não é infinito: existem questões que são matematicamente impossíveis de serem resolvidas por um algoritmo de propósito geral em tempo finito, definindo um limite teórico."
+      },
+      {
+        "question": "O seu drone usa um algoritmo de Busca Binária para localizar alvos, que corta o espaço de busca pela metade em cada passo. Na notação Big O, essa eficiência é representada como:",
+        "options": [
+          "O(1).",
+          "O(n).",
+          "O(log n).",
+          "O(n log n)."
+        ],
+        "answer": "O(log n).",
+        "oracle_hint": "A cada passo, o algoritmo corta o espaço de busca pela metade.",
+        "explanation": "A complexidade de tempo O(log n) (Tempo Logarítmico) é típica de algoritmos que empregam a estratégia 'dividir para conquistar' ou que sistematicamente reduzem o espaço de busca, como a busca binária. É extremamente eficiente."
+      },
+      {
+        "question": "Você explica para um novato que a classe NP-Completo (NP-C) não é a mesma que NP. Qual a distinção fundamental entre o conjunto maior (NP) e o subconjunto (NP-C)?",
+        "options": [
+          "NP-C é mais restrito, contendo apenas problemas que podem ser reduzidos a um problema em P.",
+          "NP-C é o subconjunto de NP que contém os problemas mais difíceis (aqueles que são também NP-difíceis).",
+          "Todo NP é NP-C.",
+          "NP-C contém problemas que são apenas verificáveis, e NP contém problemas resolvidos em tempo polinomial."
+        ],
+        "answer": "NP-C é o subconjunto de NP que contém os problemas mais difíceis (aqueles que são também NP-difíceis).",
+        "oracle_hint": "Pensa em NP como uma biblioteca e NP-completo como as estantes com os livros mais pesados.",
+        "explanation": "A classe NP-Completo é o subconjunto de NP que define a fronteira máxima da dificuldade em NP. Eles são os problemas mais representativos, pois se um deles for resolvido eficientemente, todos os problemas em NP podem ser resolvidos eficientemente."
+      },
+      {
+        "question": "Em qual teorema fundamental foi provado que o Problema da Satisfatibilidade Booleana (SAT) é a 'chave' (o primeiro NP-Completo), estabelecendo o conceito de redução polinomial?",
+        "options": [
+          "Teorema da Incompletude de Gödel.",
+          "O Teorema de Cook (ou Cook-Levin).",
+          "Tese de Church-Turing.",
+          "Lei de Moore."
+        ],
+        "answer": "O Teorema de Cook (ou Cook-Levin).",
+        "oracle_hint": "A prova fundamental que define a classe NP-C tem o nome deste cientista e data de 1971.",
+        "explanation": "Stephen Cook formalizou a classe de problemas NP-completo e provou que SAT é o primeiro, no seu famoso Teorema de Cook (Teorema de Cook-Levin, juntamente com Levin, que o demonstrou independentemente)."
+      },
+      {
+        "question": "Um problema é indecidível quando não há um algoritmo geral que sempre encontre uma resposta. Um problema intratável (como o Caixeiro Viajante) é, por outro lado:",
+        "options": [
+          "Um problema fácil que pode ser resolvido em tempo constante considerando o volume da entrada.",
+          "Um problema que exige um tempo de processamento impraticável mas solucionável.",
+          "Um problema que só pode ser resolvido por IAs.",
+          "Um problema sem solução teórica, conforme comprovado por Church."
+        ],
+        "answer": "Um problema que exige um tempo de processamento impraticável mas solucionável.",
+        "oracle_hint": "Um é impossível de resolver, o outro é possível, mas demora muito.",
+        "explanation": "Problemas indecidíveis não têm um algoritmo que sempre forneça uma resposta. Problemas intratáveis (como os NP-Completos se P ≠ NP) são decidíveis, mas seu algoritmo mais rápido exige um tempo exponencial, tornando-o impraticável para entradas grandes."
+      },
+      {
+        "question": "Um algoritmo de IA usa a estratégia 'dividir para conquistar' para ordenar dados com complexidade O(n log n). Qual algoritmo de ordenação famoso tem essa complexidade no pior caso?",
+        "options": [
+          "Bubble Sort (O(n^2)).",
+          "Insertion Sort (O(n^2)).",
+          "Mergesort (O(n log n)).",
+          "Quicksort (O(n^2) no pior caso)."
+        ],
+        "answer": "Mergesort (O(n log n)).",
+        "oracle_hint": "Esse algoritmo divide para conquistar, juntando as partes ordenadas no final, mantendo a eficiência.",
+        "explanation": "O Mergesort tem complexidade de tempo O(n log n) em todos os casos (melhor, médio e pior), o que o torna um dos algoritmos de ordenação mais eficientes e estáveis."
+      },
+      {
+        "question": "O problema de otimização de redes de IA, chamado Problema da Clique Máxima (encontrar o maior subgrafo totalmente conectado), é um desafio na teoria de grafos. A qual classe de complexidade ele pertence?",
+        "options": [
+          "P, pois é um problema fácil de grafos.",
+          "É NP-completo.",
+          "É Indecidível.",
+          "Tem complexidade O(n log n)."
+        ],
+        "answer": "É NP-completo.",
+        "oracle_hint": "É um dos clássicos problemas de grafos difíceis, usado para reduzir outros problemas.",
+        "explanation": "O Problema da Clique Máxima é classicamente NP-completo. Encontrar a clique (o subgrafo completo) de maior tamanho é um desafio que, no pior caso, exige uma busca exponencial."
+      },
+      {
+        "question": "Ao tentar resolver o Caixeiro Viajante (TSP) com 20 cidades, o hacker percebe que testar todas as rotas levará anos. Isso ocorre porque o algoritmo de força bruta tem complexidade:",
+        "options": [
+          "Tempo Linear (O(n)).",
+          "Tempo Quadrático (O(n^2)).",
+          "Tempo Fatorial (O(n!)).",
+          "Tempo Exponencial de Base 2 (O(2^n))."
+        ],
+        "answer": "Tempo Fatorial (O(n!)).",
+        "oracle_hint": "Esse método testa todas as possíveis ordens de cidades.",
+        "explanation": "Resolver o TSP por força bruta exige testar todas as permutações de cidades. O número de permutações de n cidades é n! (n fatorial), o que cresce incrivelmente rápido e é considerado intratável."
+      },
+      {
+        "question": "O seu sistema de detecção de invasão usa um algoritmo que sempre gera o mesmo resultado para a mesma sequência de dados de entrada. Esse algoritmo é conhecido como:",
+        "options": [
+          "Não-Determinístico.",
+          "Determinístico.",
+          "Probabilístico.",
+          "Caótico."
+        ],
+        "answer": "Determinístico.",
+        "oracle_hint": "É previsível: entrada igual, saída igual.",
+        "explanation": "Um algoritmo determinístico é aquele que sempre segue a mesma sequência de passos e produz a mesma saída para a mesma entrada, operando de forma previsível e sem aleatoriedade."
+      },
+      {
+        "question": "O Quicksort é popular por sua velocidade, mas pode desacelerar drasticamente se o pivô for sempre mal escolhido. Qual a complexidade de tempo do Quicksort no pior caso?",
+        "options": [
+          "O(n).",
+          "O(n log n).",
+          "O(n^2).",
+          "O(2^n)."
+        ],
+        "answer": "O(n^2).",
+        "oracle_hint": "Quando o pivô é sempre o pior possível, ele acaba se aproximando da força bruta.",
+        "explanation": "O Quicksort tem complexidade média O(n log n), mas no pior caso, onde a escolha do pivô é sempre a menos ideal, ele degenera para uma complexidade quadrática (O(n^2))."
+      },
+      {
+        "question": "A principal missão da Teoria da Complexidade na guerra de informação é identificar a fronteira entre o que é 'fácil' e o que é 'difícil' na computação. Qual seu foco principal?",
+        "options": [
+          "Construir computadores mais rápidos para processar a maior quantidade de algoritmos possíveis.",
+          "A classificação de problemas considerando tempo e espaço necessários para resolvê-los.",
+          "Criar novos sistemas operacionais capazes de superar a limitação do problema da parada.",
+          "Desenvolver linguagens de programação."
+        ],
+        "answer": "A classificação de problemas considerando tempo e espaço necessários para resolvê-los.",
+        "oracle_hint": "É como organizar problemas em caixinhas: fáceis (P), difíceis (NP-C) ou impossíveis (Indecidíveis).",
+        "explanation": "A teoria da complexidade classifica problemas computacionais em termos de recursos necessários (tempo, memória). Ela busca entender por que alguns problemas são intrinsecamente mais difíceis do que outros."
+      },
+      {
+        "question": "Na complexidade de tempo, qual tipo de crescimento de tempo é considerado eficiente (tratável) versus aquele que é impraticável (intratável)?",
+        "options": [
+          "Polinomial é impraticável; Exponencial é eficiente.",
+          "Logarítmico é impraticável; Polinomial é eficiente.",
+          "Polinomial (e.g., n^2) é eficiente; Exponencial (e.g., 2^n) é impraticável.",
+          "Fatorial é eficiente; Constante é impraticável."
+        ],
+        "answer": "Polinomial (e.g., n^2) é eficiente; Exponencial (e.g., 2^n) é impraticável.",
+        "oracle_hint": "Um cresce como n², o outro como 2^n. O segundo explode.",
+        "explanation": "Tempo polinomial é considerado eficiente porque cresce devagar e de forma controlada, enquanto exponencial cresce muito rápido e se torna impraticável para grandes entradas, caracterizando a intratabilidade."
+      },
+      {
+        "question": "Qual a principal diferença entre um problema NP-Completo e um problema NP-Difícil?",
+        "options": [
+          "NP-C é mais difícil do que NP-Difícil.",
+          "NP-Difícil são problemas fáceis que não estão em P, mas podem estar em NP-S, um subconjunto da classe NP especializada em serialização.",
+          "NP-Difícil são aqueles que são pelo menos tão difíceis quanto os NP-C, mas não estão necessariamente na classe NP.",
+          "NP-C são problemas indecidíveis."
+        ],
+        "answer": "NP-Difícil são aqueles que são pelo menos tão difíceis quanto os NP-C, mas não estão necessariamente na classe NP.",
+        "oracle_hint": "O termo 'NP-Difícil' significa pelo menos tão difícil quanto NP-C. Um problema NP-Difícil pode ser até indecidível, mas o NP-C precisa ser decidível (estar em NP).",
+        "explanation": "NP-difíceis são pelo menos tão difíceis quanto os NP-completos, podendo até ser indecidíveis. A diferença é que os NP-Completos devem ser, por definição, problemas de decisão que pertencem à classe NP. Os NP-Difíceis não têm essa restrição, permitindo incluir problemas de otimização."
+      },
+      {
+        "question": "A questão P vs NP é crucial para a segurança de toda a rede de Neo-Cyberia. Qual seria a principal consequência prática se a prova de que P = NP fosse revelada?",
+        "options": [
+          "A IA seria capaz de resolver o Problema da Parada.",
+          "A segurança da criptografia de chave pública seria totalmente quebrada.",
+          "Os computadores quânticos se tornariam obsoletos.",
+          "Todos os problemas indecidíveis se tornariam tratáveis."
+        ],
+        "answer": "A segurança da criptografia de chave pública seria totalmente quebrada.",
+        "oracle_hint": "A criptografia digital se baseia na dificuldade em resolver problemas NP-Difíceis. Se eles fossem fáceis de resolver, a criptografia não funcionaria.",
+        "explanation": "Saber se P = NP tem impacto em segurança, criptografia, inteligência artificial e otimização. A maioria dos sistemas de criptografia utiliza a dificuldade (intratabilidade) de problemas NP-Difíceis/NP-Completos como pilar de segurança. Se P=NP, esses problemas seriam facilmente resolvidos, quebrando esses sistemas."
+      }
     ],
     "hard_questions": [
-        {
-            "question": "O Teorema de Cook-Levin é o registro mais antigo da dificuldade na Era Digital. Ele é crucial porque estabeleceu que:",
-            "options": [
-                "A Tese de Church-Turing é falsa.",
-                "O Problema da Satisfatibilidade Booleana (SAT) é NP-Completo, definindo o modelo de redução para todos os problemas NP-C.",
-                "P = NP, resultando na quebra da primeira criptografia digital.",
-                "Todo problema indecidível pode ser resolvido."
-            ],
-            "answer": "O Problema da Satisfatibilidade Booleana (SAT) é NP-Completo, definindo o modelo de redução para todos os problemas NP-C.",
-            "oracle_hint": "Este teorema deu o 'ponto de partida' para toda a cadeia de problemas NP-Completo.",
-            "explanation": "O Teorema de Cook-Levin (1971) prova que o Problema da Satisfatibilidade Booleana (SAT) é NP-Completo. Essa foi a primeira prova de NP-Completo, e a partir dela, cientistas puderam provar que inúmeros outros problemas são NP-Completos através da redução polinomial a SAT."
-        },
-        {
-            "question": "A Tese de Church-Turing é o credo da filosofia computacional. O que essa tese implica para a Máquina de Turing em relação a todos os outros modelos de computação clássica?",
-            "options": [
-                "Que a Máquina de Turing é o único modelo determinístico existente.",
-                "Que a capacidade de qualquer sistema de computação pode ser simulada por uma Máquina de Turing Universal (o limite máximo do 'computável').",
-                "Que a capacidade da sua máquina é limitada pelo tempo exponencial.",
-                "Que a computação quântica é impossível."
-            ],
-            "answer": "Que a capacidade de qualquer sistema de computação pode ser simulada por uma Máquina de Turing Universal (o limite máximo do 'computável').",
-            "oracle_hint": "É a tese que iguala o conceito humano de 'computável' com o que a MT consegue fazer.",
-            "explanation": "A Tese de Church-Turing afirma que qualquer função que seja 'computável' (passível de ser resolvida por um algoritmo no sentido intuitivo) pode ser calculada por uma Máquina de Turing. Isso significa que a MT é o modelo máximo de computabilidade para a computação clássica, limitando o poder de qualquer computador moderno."
-        },
-        {
-            "question": "Um vírus de backdoor tem a complexidade de tempo O(2^n), ou seja, tempo exponencial. Qual a implicação disso para a Corporação ao tentar executar o vírus em um tamanho de rede n grande?",
-            "options": [
-                "O vírus rodará em tempo polinomial.",
-                "O tempo de execução cresce de forma drástica e insustentável para qualquer aumento na entrada n.",
-                "O tempo de execução será constante.",
-                "O tempo de execução será comparável ao tempo logarítmico."
-            ],
-            "answer": "O tempo de execução cresce de forma drástica e insustentável para qualquer aumento na entrada n.",
-            "oracle_hint": "Basta comparar n^k com 2^n para um n grande. A exponencial domina.",
-            "explanation": "O tempo exponencial (O(2^n)) cresce a uma taxa muito maior do que o tempo polinomial (O(n^k)). Esse crescimento insustentável é o que torna os algoritmos com essa complexidade intratáveis na prática para entradas grandes, mesmo com os supercomputadores da Corporação."
-        },
-        {
-            "question": "A criptografia RSA, utilizada pela Corporação para a segurança bancária, baseia sua inviolabilidade na dificuldade de qual problema, considerado intratável em computadores clássicos?",
-            "options": [
-                "O Problema da Soma de Subconjuntos.",
-                "O Problema da Satisfatibilidade Booleana (SAT).",
-                "O problema da Fatoração de números inteiros (encontrar os fatores primos).",
-                "O Problema da Parada."
-            ],
-            "answer": "O problema da Fatoração de números inteiros (encontrar os fatores primos).",
-            "oracle_hint": "Pense no Shor's Algorithm em computação quântica, que ameaça essa segurança.",
-            "explanation": "A segurança do RSA baseia-se na dificuldade do problema da Fatoração de Números Primos (encontrar os fatores primos de um número composto grande). Embora a fatoração não seja conhecida por ser NP-Completa, é um problema que se acredita ser intratável em computadores clássicos, o que a torna segura."
-        },
-        {
-            "question": "A versão de Otimização do Problema do Caixeiro Viajante (encontrar o caminho mais curto) é a versão mais desafiadora. Ela é um problema NP-Difícil, mas não é NP-Completo. Por quê?",
-            "options": [
-                "Porque a versão de otimização está em P.",
-                "Porque ela é um problema de busca por valor, e não um problema de decisão (que é o que a classe NP exige).",
-                "Porque ela é indecidível.",
-                "Porque ela é mais fácil de verificar do que de resolver."
-            ],
-            "answer": "Porque ela é um problema de busca por valor, e não um problema de decisão (que é o que a classe NP exige).",
-            "oracle_hint": "Lembre-se da definição de NP: apenas problemas de decisão (resposta SIM/NÃO) podem ser incluídos em NP. Problemas de otimização (resposta: valor) não.",
-            "explanation": "A classe NP (e, portanto, NP-Completo) é definida estritamente para problemas de decisão (aqueles que têm resposta SIM ou NÃO). Problemas de otimização (encontrar o melhor valor, como o caminho mais curto) são classificados como NP-Difíceis, pois são pelo menos tão difíceis, mas não se enquadram na definição formal de NP."
-        },
-        {
-            "question": "O que a Máquina de Turing Não-Determinística (MTND) representa em termos conceituais para a Classe NP?",
-            "options": [
-                "Um computador que só pode resolver problemas em P.",
-                "Um modelo teórico capaz de 'adivinhar' o caminho correto para a solução e verificá-lo em tempo polinomial.",
-                "Um computador com memória RAM finita.",
-                "Um modelo que resolve o Problema da Parada."
-            ],
-            "answer": "Um modelo teórico capaz de 'adivinhar' o caminho correto para a solução e verificá-lo em tempo polinomial.",
-            "oracle_hint": "O 'N' em NP vem de 'Não-Determinística'. É um modelo teórico que pode seguir múltiplos caminhos simultaneamente.",
-            "explanation": "A MTND pode, em qualquer estado, ter múltiplas transições possíveis, permitindo que ela explore todos os possíveis caminhos de computação em paralelo (o 'adivinhar' e verificar). Essa capacidade 'imaginária' define que os problemas em NP podem ser resolvidos em tempo polinomial por uma MTND, o que é equivalente a serem verificáveis em tempo polinomial por uma Máquina de Turing Determinística (MTD) clássica."
-        }
+      {
+        "question": "O Teorema de Cook-Levin é o registro mais antigo da dificuldade na Era Digital. Ele é crucial porque estabeleceu que:",
+        "options": [
+          "A Tese de Church-Turing é falsa, mas possui a possibilidade de ser resolvida com uma máquina de turing quântica.",
+          "O Problema da Satisfatibilidade Booleana (SAT) é NP-Completo, definindo o modelo de redução para todos os problemas NP-C.",
+          "P = NP, resultando na quebra da primeira criptografia digital.",
+          "Todo problema indecidível pode ser resolvido."
+        ],
+        "answer": "O Problema da Satisfatibilidade Booleana (SAT) é NP-Completo, definindo o modelo de redução para todos os problemas NP-C.",
+        "oracle_hint": "Este teorema deu o 'ponto de partida' para toda a cadeia de problemas NP-Completo.",
+        "explanation": "O Teorema de Cook-Levin (1971) prova que o Problema da Satisfatibilidade Booleana (SAT) é NP-Completo. Essa foi a primeira prova de NP-Completo, e a partir dela, cientistas puderam provar que inúmeros outros problemas são NP-Completos através da redução polinomial a SAT."
+      },
+      {
+        "question": "A Tese de Church-Turing é o credo da filosofia computacional. O que essa tese implica para a Máquina de Turing em relação a todos os outros modelos de computação clássica?",
+        "options": [
+          "Que a Máquina de Turing é o único modelo determinístico existente.",
+          "Que a capacidade de qualquer sistema de computação pode ser simulada por uma Máquina de Turing.",
+          "Que a capacidade da sua máquina é limitada pelo tempo exponencial.",
+          "Que a computação quântica é impossível."
+        ],
+        "answer": "Que a capacidade de qualquer sistema de computação pode ser simulada por uma Máquina de Turing.",
+        "oracle_hint": "É a tese que iguala o conceito humano de 'computável' com o que a MT consegue fazer.",
+        "explanation": "A Tese de Church-Turing afirma que qualquer função que seja 'computável' (passível de ser resolvida por um algoritmo no sentido intuitivo) pode ser calculada por uma Máquina de Turing. Isso significa que a MT é o modelo máximo de computabilidade para a computação clássica, limitando o poder de qualquer computador moderno."
+      },
+      {
+        "question": "Um vírus de backdoor tem a complexidade de tempo O(2^n), ou seja, tempo exponencial. Qual a implicação disso para a Corporação ao tentar executar o vírus em um tamanho de rede n grande?",
+        "options": [
+          "O vírus rodará em tempo polinomial, garantindo eficiência na execução e sucesso na obtenção dos dados.",
+          "O tempo de execução cresce de forma drástica e insustentável para qualquer aumento na entrada n.",
+          "O tempo de execução será constante.",
+          "O tempo de execução será comparável ao tempo logarítmico de um algoritmo simples."
+        ],
+        "answer": "O tempo de execução cresce de forma drástica e insustentável para qualquer aumento na entrada n.",
+        "oracle_hint": "Basta comparar n^k com 2^n para um n grande. A exponencial domina.",
+        "explanation": "O tempo exponencial (O(2^n)) cresce a uma taxa muito maior do que o tempo polinomial (O(n^k)). Esse crescimento insustentável é o que torna os algoritmos com essa complexidade intratáveis na prática para entradas grandes, mesmo com os supercomputadores da Corporação."
+      },
+      {
+        "question": "A criptografia RSA, utilizada pela Corporação para a segurança bancária, baseia sua inviolabilidade na dificuldade de qual problema, considerado intratável em computadores clássicos?",
+        "options": [
+          "O Problema da Soma de Subconjuntos.",
+          "O Problema da Satisfatibilidade Booleana (SAT).",
+          "O problema da Fatoração de números inteiros.",
+          "O Problema da Parada."
+        ],
+        "answer": "O problema da Fatoração de números inteiros.",
+        "oracle_hint": "Pense no Shor's Algorithm em computação quântica, que ameaça essa segurança.",
+        "explanation": "A segurança do RSA baseia-se na dificuldade do problema da Fatoração de Números Primos (encontrar os fatores primos de um número composto grande). Embora a fatoração não seja conhecida por ser NP-Completa, é um problema que se acredita ser intratável em computadores clássicos, o que a torna segura."
+      },
+      {
+        "question": "A versão de Otimização do Problema do Caixeiro Viajante (encontrar o caminho mais curto) é a versão mais desafiadora. Ela é um problema NP-Difícil, mas não é NP-Completo. Por quê?",
+        "options": [
+          "Porque a versão de otimização está em P sem considerar ser do tipo NP-C.",
+          "Porque ela é um problema de busca por valor, e não um problema de decisão.",
+          "Porque ela é indecidível.",
+          "Porque ela é mais fácil de verificar do que de resolver e processar pela MT."
+        ],
+        "answer": "Porque ela é um problema de busca por valor, e não um problema de decisão.",
+        "oracle_hint": "Lembre-se da definição de NP: apenas problemas de decisão (resposta SIM/NÃO) podem ser incluídos em NP. Problemas de otimização (resposta: valor) não.",
+        "explanation": "A classe NP (e, portanto, NP-Completo) é definida estritamente para problemas de decisão (aqueles que têm resposta SIM ou NÃO). Problemas de otimização (encontrar o melhor valor, como o caminho mais curto) são classificados como NP-Difíceis, pois são pelo menos tão difíceis, mas não se enquadram na definição formal de NP."
+      },
+      {
+        "question": "O que a Máquina de Turing Não-Determinística (MTND) representa em termos conceituais para a Classe NP?",
+        "options": [
+          "Um computador que só pode resolver problemas em P.",
+          "Um modelo teórico capaz de 'adivinhar' o caminho correto e verificá-lo em tempo polinomial.",
+          "Um computador com memória RAM finita, mas capaz de resolver problemas NP e P.",
+          "Um modelo que resolve o Problema da Parada considerando a entropia proposta pelos estudos de Turing e Church."
+        ],
+        "answer": "Um modelo teórico capaz de 'adivinhar' o caminho correto e verificá-lo em tempo polinomial.",
+        "oracle_hint": "O 'N' em NP vem de 'Não-Determinística'. É um modelo teórico que pode seguir múltiplos caminhos simultaneamente.",
+        "explanation": "A MTND pode, em qualquer estado, ter múltiplas transições possíveis, permitindo que ela explore todos os possíveis caminhos de computação em paralelo (o 'adivinhar' e verificar). Essa capacidade 'imaginária' define que os problemas em NP podem ser resolvidos em tempo polinomial por uma MTND, o que é equivalente a serem verificáveis em tempo polinomial por uma Máquina de Turing Determinística (MTD) clássica."
+      }
     ]
-}
+  }
