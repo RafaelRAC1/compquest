@@ -4,7 +4,8 @@
 
 CompQuest é um quiz battle multiplayer que transforma o aprendizado de conceitos de Ciência da Computação em uma experiência descontraída. Combinando elementos de RPG com storytelling, o jogo permite que os jogadores explorem os fundamentos da computabilidade e complexidade de algoritmos de forma gamificada.
 
-
+> Vídeo da Apresentação: [CompQuest](https://acadcruzeirodosul-my.sharepoint.com/:v:/g/personal/rafael_correa_cs_brazcubas_edu_br/EbgkwDKWpnxKsOuZhR0JHr0B_i8Xw4LQEToStJlMEQaWjg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3mtkl5)
+> 
 ## 🎯 OBJETIVOS
 
 ### Objetivo Principal
@@ -27,6 +28,7 @@ Ensinar conceitos de Ciência da Computação através de uma abordagem lúdica 
 - Transformar conceitos abstratos em experiências memoráveis
 - Promover aprendizado ativo através da prática e repetição gamificada
 - Criar ambiente seguro para errar e aprender com feedback imediato
+
 
 ## 🛠️ Tech Stack
 
